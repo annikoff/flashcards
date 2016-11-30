@@ -15,7 +15,7 @@ describe 'password authentication' do
 
     it 'password confirmation FALSE' do
       register('test@test.com', '12345', '56789', 'Зарегистрироваться')
-      expect(page).to have_content "Значения не совпадают."
+      expect(page).to have_content 'Значения не совпадают.'
     end
 
     it 'e-mail FALSE' do
