@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ChangeFieldsForCards < ActiveRecord::Migration
   def change
     rename_column :cards, :review_attempt, :quality

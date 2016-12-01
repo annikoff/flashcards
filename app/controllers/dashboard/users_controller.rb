@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Dashboard::UsersController < Dashboard::BaseController
   def destroy
     current_user.destroy

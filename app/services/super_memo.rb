@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Algorithm SM-2 used in the computer-based variant of the SuperMemo method and
 # involving the calculation of easiness factors for particular items:
 # http://www.supermemo.com/english/ol/sm2.htm

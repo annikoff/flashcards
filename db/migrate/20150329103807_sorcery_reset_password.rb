@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class SorceryResetPassword < ActiveRecord::Migration
   def change
     add_column :users, :reset_password_token, :string, :default => nil

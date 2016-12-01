@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module TrainerHelper
   def create_and_check_review_card(user, block, repeat, translate)
     card = create(:card, user: user, block: block, repeat: repeat)

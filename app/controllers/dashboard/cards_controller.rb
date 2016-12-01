@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Dashboard::CardsController < Dashboard::BaseController
   before_action :set_card, only: [:destroy, :edit, :update]
 

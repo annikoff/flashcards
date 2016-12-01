@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Dashboard::TrainerController < Dashboard::BaseController
   include CardFinder, Welcome
 

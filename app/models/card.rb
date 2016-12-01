@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'super_memo'
 
 class Card < ActiveRecord::Base
