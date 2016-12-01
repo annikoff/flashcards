@@ -14,7 +14,7 @@ class Home::UsersController < Home::BaseController
       auto_login(@user)
       redirect_to root_path, notice: t(:user_created_successfully_notice)
     else
-      render action: 'new'
+      respond_with @user
     end
   end
 

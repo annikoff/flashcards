@@ -1,8 +1,9 @@
 class Dashboard::TrainerController < Dashboard::BaseController
+  include CardFinder
 
   def index
     if params[:id]
-      @card = current_user.cards.find(params[:id])
+      @card = find_card params[:id]
     else
       if current_user.current_block
         @card = current_user.current_block.cards.pending.first
@@ -20,7 +21,7 @@ class Dashboard::TrainerController < Dashboard::BaseController
   end
 
   def review_card
-    @card = current_user.cards.find(params[:card_id])
+    @card = find_card params[:card_id]
 
     check_result = @card.check_translation(trainer_params[:user_translation])
 

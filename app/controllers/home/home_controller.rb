@@ -1,8 +1,9 @@
 class Home::HomeController < Home::BaseController
+  include CardFinder
 
   def index
     if params[:id]
-      @card = current_user.cards.find(params[:id])
+      @card = find_card params[:id]
     else
       if current_user.current_block
         @card = current_user.current_block.cards.pending.first

@@ -37,7 +37,7 @@ class Dashboard::CardsController < Dashboard::BaseController
   private
 
   def set_card
-    @card = current_user.cards.find(params[:id])
+    @card = find_card params[:id]
   end
 
   def card_params
