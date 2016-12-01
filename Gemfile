@@ -6,19 +6,16 @@ ruby '2.3.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.0.1'
 
-gem 'bootstrap-sass', '~> 3.3.7'
-
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '~>  5.0.6'
 gem 'coffee-rails', '~> 4.2.1'
 gem 'uglifier', '>= 3.0.3'
-
 gem 'jbuilder', '~> 2.6.1'
 gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.2', group: :doc
-
 gem 'rake'
 gem 'nokogiri'
 gem 'simple_form'
