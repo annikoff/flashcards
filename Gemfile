@@ -6,6 +6,7 @@ ruby '2.3.2'
 gem 'rails', '5.0.0.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
+gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '~>  5.0.6'
 gem 'uglifier', '>= 3.0.3'
 gem 'coffee-rails', '~> 4.2.1'
