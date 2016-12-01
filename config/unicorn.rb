@@ -2,15 +2,15 @@
 APP_DIR = File.expand_path('../../', __FILE__)
 
 # paths
-working_directory "#{APP_DIR}/current"
-pid "#{APP_DIR}/current/tmp/pids/unicorn.pid"
+working_directory "#{APP_DIR}"
+pid "#{APP_DIR}/tmp/pids/unicorn.pid"
 
 # listen
-listen "#{APP_DIR}/current/tmp/sockets/unicorn.socket", backlog: 64
+listen "#{APP_DIR}/tmp/sockets/unicorn.socket", backlog: 64
 
 # logging
-stderr_path "#{APP_DIR}/current/log/unicorn.stderr.log"
-stdout_path "#{APP_DIR}/current/log/unicorn.stdout.log"
+stderr_path "#{APP_DIR}/log/unicorn.stderr.log"
+stdout_path "#{APP_DIR}/log/unicorn.stdout.log"
 
 worker_processes ENV.fetch('WEB_CONCURRENCY', 2).to_i
 timeout ENV.fetch('UNICORN_TIMEOUT', 15).to_i
@@ -30,6 +30,6 @@ before_fork do |server, _worker|
   end
 end
 
-after_fork do
+after_fork do |_server, _worker|
   ActiveRecord::Base.establish_connection if defined?(ActiveRecord::Base)
 end
