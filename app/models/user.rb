@@ -13,20 +13,25 @@ class User < ActiveRecord::Base
     config.authentications_class = Authentication
   end
 
-  validates :password, confirmation: true, presence: true,
+  validates :password,
+            confirmation: true,
+            presence: true,
             length: { minimum: 3 }
   validates :password_confirmation, presence: true
-  validates :email, uniqueness: true, presence: true,
+  validates :email,
+            uniqueness: true,
+            presence: true,
             format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/ }
-  validates :locale, presence: true,
+  validates :locale,
+            presence: true,
             inclusion: { in: I18n.available_locales.map(&:to_s),
                          message: 'Выберите локаль из выпадающего списка.' }
 
-  def has_linked_github?
+  def linked_to_github?
     authentications.where(provider: 'github').present?
   end
 
-  def set_current_block(block)
+  def current_block=(block)
     update_attribute(:current_block_id, block.id)
   end
 

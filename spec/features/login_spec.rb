@@ -59,20 +59,20 @@ describe 'password authentication' do
 
     it 'incorrect e-mail' do
       login('1@1.com', '12345', 'Войти')
-      expect(page).
-          to have_content 'Вход не выполнен. Проверте вводимые E-mail и Пароль.'
+      expect(page)
+        .to have_content 'Вход не выполнен. Проверте вводимые E-mail и Пароль.'
     end
 
     it 'incorrect password' do
       login('test@test.com', '56789', 'Войти')
-      expect(page).
-          to have_content 'Вход не выполнен. Проверте вводимые E-mail и Пароль.'
+      expect(page)
+        .to have_content 'Вход не выполнен. Проверте вводимые E-mail и Пароль.'
     end
 
     it 'incorrect e-mail and password' do
       login('1@1.com', '56789', 'Войти')
-      expect(page).
-          to have_content 'Вход не выполнен. Проверте вводимые E-mail и Пароль.'
+      expect(page)
+        .to have_content 'Вход не выполнен. Проверте вводимые E-mail и Пароль.'
     end
   end
 
@@ -95,7 +95,7 @@ describe 'password authentication' do
     it 'default locale' do
       click_link 'en'
       register('test@test.com', '12345', '12345', 'Sing up')
-      user = User.find_by_email('test@test.com')
+      user = User.find_by email: 'test@test.com'
       expect(user.locale).to eq('en')
     end
 

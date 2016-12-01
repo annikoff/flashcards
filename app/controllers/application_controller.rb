@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require "application_responder"
+require 'application_responder'
 
 class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
@@ -18,14 +18,16 @@ class ApplicationController < ActionController::Base
              elsif session[:locale]
                session[:locale]
              else
-               http_accept_language.compatible_language_from(I18n.available_locales)
+               http_accept_language
+                 .compatible_language_from(I18n.available_locales)
              end
 
-    if locale && I18n.available_locales.include?(locale.to_sym)
-      session[:locale] = I18n.locale = locale
-    else
-      session[:locale] = I18n.locale = I18n.default_locale
-    end
+    session[:locale] =
+      if locale && I18n.available_locales.include?(locale.to_sym)
+        I18n.locale = locale
+      else
+        I18n.locale = I18n.default_locale
+      end
   end
 
   def default_url_options(options = {})

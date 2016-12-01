@@ -2,34 +2,32 @@ AllCops:
   Exclude:
     - 'bin/*'
     - 'vendor/**/*'
-    - 'db/*'
-    - 'config/initializers/_*'
+    - 'db/**/*'
+    - 'config/initializers/*'
   DisplayCopNames: true
   DisplayStyleGuide: true
   TargetRubyVersion: 2.3
 
 Rails:
   Enabled: true
-#
-#Metrics/LineLength:
-#  Max: 120
-#  Exclude:
-#    - 'config/initializers/devise.rb'
-#
-#Metrics/MethodLength:
-#  Max: 15
-#
-#Metrics/AbcSize:
-#  Enabled: false
-#
-#Style/Documentation:
-#  Enabled: false
-#
-#Style/Encoding:
-#  Enabled: false
-#
-#Style/SignalException:
-#  Enabled: false
-#
-#Style/MultilineMethodCallIndentation:
-#  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false

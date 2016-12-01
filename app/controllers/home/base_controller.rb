@@ -1,3 +1,5 @@
 # frozen_string_literal: true
-class Home::BaseController < ApplicationController
+module Home
+  class BaseController < ApplicationController
+  end
 end

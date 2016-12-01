@@ -16,28 +16,31 @@ class Card < ActiveRecord::Base
 
   mount_uploader :image, CardImageUploader
 
-  scope :pending, -> { where('review_date <= ?', Time.now).order('RANDOM()') }
+  scope :pending, lambda {
+    where('review_date <= ?', Time.current).order('RANDOM()')
+  }
   scope :repeating, -> { where('quality < ?', 4).order('RANDOM()') }
 
   def check_translation(user_translation)
     distance = Levenshtein.distance(full_downcase(translated_text),
                                     full_downcase(user_translation))
     options = {
-        interval: interval,
-        repeat: repeat,
-        efactor: efactor,
-        attempt: attempt,
-        distance: distance,
-        distance_limit: 1
+      interval: interval,
+      repeat: repeat,
+      efactor: efactor,
+      attempt: attempt,
+      distance: distance,
+      distance_limit: 1
     }
     sm_hash = SuperMemo.algorithm options
 
     if distance <= 1
-      sm_hash.merge!({ review_date: Time.now + interval.to_i.days, attempt: 1 })
+      sm_hash[:review_date] = Time.current + interval.to_i.days
+      sm_hash[:attempt] = 1
       update(sm_hash)
       { state: true, distance: distance }
     else
-      sm_hash.merge!({ attempt: [attempt + 1, 5].min })
+      sm_hash[:attempt] = [attempt + 1, 5].min
       update(sm_hash)
       { state: false, distance: distance }
     end
@@ -55,13 +58,12 @@ class Card < ActiveRecord::Base
   protected
 
   def set_review_date_as_now
-    self.review_date = Time.now
+    self.review_date = Time.current
   end
 
   def texts_are_not_equal
-    if full_downcase(original_text) == full_downcase(translated_text)
-      errors.add(:original_text, 'Вводимые значения должны отличаться.')
-    end
+    return if full_downcase(original_text) != full_downcase(translated_text)
+    errors.add(:original_text, 'Вводимые значения должны отличаться.')
   end
 
   def full_downcase(str)

@@ -5,15 +5,15 @@ module TrainerHelper
     process :review_card,
             method: :put,
             params: { card_id: card.id, user_translation: translate }
-    Card.find(card.id)
+    Card.find card.id
   end
 
   def check_review_card(card, translate, number)
-    number.times {
+    number.times do
       process :review_card,
               method: :put,
               params: { card_id: card.id, user_translation: translate }
-    }
-    Card.find(card.id)
+    end
+    Card.find card.id
   end
 end
