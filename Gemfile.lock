@@ -100,6 +100,7 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
+    get_process_mem (0.2.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     http_accept_language (2.1.0)
@@ -114,6 +115,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     jwt (1.5.6)
+    kgio (2.10.0)
     levenshtein (0.2.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -178,6 +180,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rainbow (2.1.0)
+    raindrops (0.17.0)
     rake (11.3.0)
     rdoc (4.3.0)
     responders (2.3.0)
@@ -244,6 +247,12 @@ GEM
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.1.1)
+    unicorn (5.2.0)
+      kgio (~> 2.6)
+      raindrops (~> 0.7)
+    unicorn-worker-killer (0.4.4)
+      get_process_mem (~> 0)
+      unicorn (>= 4, < 6)
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -286,6 +295,8 @@ DEPENDENCIES
   simple_form
   sorcery
   uglifier (>= 3.0.3)
+  unicorn
+  unicorn-worker-killer
   whenever
 
 RUBY VERSION
