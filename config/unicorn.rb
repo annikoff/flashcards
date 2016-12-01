@@ -2,7 +2,7 @@
 APP_DIR = File.expand_path('../../', __FILE__)
 
 # paths
-working_directory "#{APP_DIR}"
+working_directory APP_DIR
 pid "#{APP_DIR}/tmp/pids/unicorn.pid"
 
 # listen
