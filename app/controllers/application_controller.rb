@@ -16,9 +16,9 @@ class ApplicationController < ActionController::Base
 
   def locale
     locale = current_user&.locale ||
-      params[:user_locale] ||
-      session[:locale] ||
-      http_accept_language.compatible_language_from(I18n.available_locales)
+             params[:user_locale] ||
+             session[:locale] ||
+             compatible_language
 
     return locale if I18n.available_locales.include?(locale&.to_sym)
     I18n.default_locale
@@ -26,5 +26,9 @@ class ApplicationController < ActionController::Base
 
   def default_url_options(options = {})
     { locale: I18n.locale }.merge options
+  end
+
+  def compatible_language
+    http_accept_language.compatible_language_from(I18n.available_locales)
   end
 end

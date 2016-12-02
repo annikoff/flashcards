@@ -3,7 +3,7 @@ class Block < ActiveRecord::Base
   has_many :cards, dependent: :destroy
   belongs_to :user
 
-  validates_presence_of :title
+  validates :title, presence: true
 
   def current?
     id == user.current_block_id

@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 module Dashboard
   class BlocksController < Dashboard::BaseController
-    before_action :find_block, only: [:destroy, :edit, :update, :set_as_current,
-                                     :reset_as_current]
+    before_action :find_block, only: [
+      :destroy, :edit, :update, :set_as_current, :reset_as_current
+    ]
 
     def index
       @blocks = current_user.blocks.all.order('title')

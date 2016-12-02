@@ -7,7 +7,7 @@ class Card < ActiveRecord::Base
   validates :user_id, presence: true
   before_validation :set_review_date_as_now, on: :create
   validate :texts_are_not_equal
-  validates_presence_of :original_text, :translated_text, :review_date
+  validates :original_text, :translated_text, :review_date, presence: true
   validates :user_id, presence: {
     message: I18n.t(:error_message_association_error)
   }
@@ -16,7 +16,6 @@ class Card < ActiveRecord::Base
               message: I18n.t(:error_message_select_deck_from_the_list)
             }
   validates :interval, :repeat, :efactor, :quality, :attempt, presence: true
-
 
   mount_uploader :image, CardImageUploader
 

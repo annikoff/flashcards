@@ -13,7 +13,7 @@ module Home
       if @user
         redirect_to trainer_path,
                     notice: t(:log_in_is_successful_provider_notice),
-                               provider: provider.titleize
+                    provider: provider.titleize
       else
         begin
           @user = create_from(provider)
@@ -21,11 +21,11 @@ module Home
           auto_login(@user)
           redirect_to trainer_path,
                       notice: t(:log_in_is_successful_provider_notice),
-                                 provider: provider.titleize
+                      provider: provider.titleize
         rescue
           redirect_to user_sessions_path,
                       alert: t(:log_out_failed_provider_alert),
-                                provider: provider.titleize
+                      provider: provider.titleize
         end
       end
     end
