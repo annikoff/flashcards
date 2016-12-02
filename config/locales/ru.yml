@@ -1,8 +1,12 @@
 ru:
+  app_name: 'Флэшкарточкер'
+  title_label: 'Название'
   welcome: 'Добро пожаловать.'
   original_text_label: 'Оригинал'
   translated_text_label: 'Перевод'
   current_card_label: 'Текущая карточка'
+  image_label: 'Изображение'
+  delete_image_label: 'Удалить изображение'
   check_card_button: 'Проверить'
   no_review_card_text: 'Вы изучили все доступные карточки.
       Ожидайте наступления даты пересмотра.'
@@ -13,8 +17,14 @@ ru:
   sing_up_label: 'Зарегистрироваться'
   sing_in_label: 'Вход'
   log_in_label: 'Войти'
+  decks_label: 'Колоды'
+  choose_deck_prompt: 'Выберите колоду'
   all_decks_label: 'Все колоды'
   add_deck_label: 'Добавить колоду'
+  edit_deck_label: 'Редактировать колоду'
+  set_as_common_label: 'Сделать обычной'
+  set_as_current_label: 'Сделать текущей'
+  edit_card_label: 'Редактировать карточку'
   all_cards_label: 'Все карточки'
   add_card_label: 'Добавить карточку'
   user_profile_label: 'Профиль пользователя'
@@ -41,6 +51,11 @@ ru:
   log_out_is_successful_notice: 'Выход выполнен успешно.'
   log_out_failed_provider_alert: "Вход из аккаунта %{provider.titleize} не выполнен ."
   please_log_in: 'Пожалуйста авторизуйтесь.'
+  confirm_deletion: 'Подтвердите удаление'
+  edit_label: 'Редактировать'
+  delete_label: 'Удалить'
+  review_label: 'Пересмотр'
+  go_to_website_to_look_at_cards: 'Перейти на сайт для просмотра карточек'
 
   activerecord:
     errors:
@@ -50,3 +65,4 @@ ru:
         confirmation: 'Значения не совпадают.'
         taken: 'Не уникальное значение.'
         invalid: 'Не верный формат.'
+

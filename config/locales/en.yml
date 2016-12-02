@@ -1,8 +1,12 @@
 en:
+  app_name: 'Flashcards'
+  title_label: 'Title'
   welcome: 'Welcome.'
   original_text_label: 'Original'
   translated_text_label: 'Translation'
   current_card_label: 'Current card'
+  image_label: 'Image'
+  delete_image_label: 'Delete image'
   check_card_button: 'Check'
   no_review_card_text: 'You have studied all available cards.
       Expect the date of revision.'
@@ -13,10 +17,16 @@ en:
   sing_up_label: 'Sing up'
   sing_in_label: 'Sing in'
   log_in_label: 'Log in'
+  decks_label: 'Decks'
+  choose_deck_prompt: 'Choose deck'
   all_decks_label: 'All deck'
   add_deck_label: 'Add deck'
+  edit_deck_label: 'Edit deck'
+  set_as_common_label: 'Set as common'
+  set_as_current_label: 'Set as current'
   all_cards_label: 'All cards'
   add_card_label: 'Add card'
+  edit_card_label: 'Edit card'
   user_profile_label: 'User profile'
   delete_user_label: 'Delete user'
   log_out_label: 'Log out'
@@ -41,6 +51,11 @@ en:
   log_out_is_successful_notice: 'Log out is successful.'
   log_out_failed_provider_alert: "Log out of your account %{provider} failed."
   please_log_in: 'Please log in.'
+  confirm_deletion: 'Confirm deletion'
+  edit_label: 'Edit'
+  delete_label: 'Delete'
+  review_label: 'Review'
+  go_to_website_to_look_at_cards: 'Go to website to look at cards'
 
   activerecord:
     errors:
