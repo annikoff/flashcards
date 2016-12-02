@@ -15,7 +15,6 @@ module Dashboard
     def edit; end
 
     def create
-      raise ActiveRecord::RecordNotFound if @card.blank?
       @card = current_user.cards.build(card_params)
       if @card.save
         redirect_to cards_path
@@ -33,7 +32,6 @@ module Dashboard
     end
 
     def destroy
-      raise ActiveRecord::RecordNotFound if @card.blank?
       @card.destroy
       respond_with @card
     end

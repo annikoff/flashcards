@@ -57,6 +57,11 @@ ru:
   review_label: 'Пересмотр'
   go_to_website_to_look_at_cards: 'Перейти на сайт для просмотра карточек'
 
+  error_message_input_values_must_be_different: 'Вводимые значения должны отличаться.'
+  error_message_select_deck_from_the_list: 'Выберите колоду из выпадающего списка.'
+  error_message_association_error: 'Ошибка ассоциации.'
+  error_message_select_local_from_the_list: 'Выберите локаль из выпадающего списка.'
+
   activerecord:
     errors:
       messages:

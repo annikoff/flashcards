@@ -57,6 +57,11 @@ en:
   review_label: 'Review'
   go_to_website_to_look_at_cards: 'Go to website to look at cards'
 
+  error_message_input_values_must_be_different: 'Input values must be different'
+  error_message_select_deck_from_the_list: 'Select a deck from the list'
+  error_message_association_error: 'Association error.'
+  error_message_select_local_from_the_list: 'Select local from the list'
+
   activerecord:
     errors:
       messages:

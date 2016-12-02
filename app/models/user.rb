@@ -24,8 +24,10 @@ class User < ActiveRecord::Base
             format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/ }
   validates :locale,
             presence: true,
-            inclusion: { in: I18n.available_locales.map(&:to_s),
-                         message: 'Выберите локаль из выпадающего списка.' }
+            inclusion: {
+              in: I18n.available_locales.map(&:to_s),
+              message: I18n.t(:error_message_select_local_from_the_list)
+            }
 
   def linked_to_github?
     authentications.where(provider: 'github').present?

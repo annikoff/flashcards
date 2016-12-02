@@ -105,7 +105,7 @@ describe 'password authentication' do
       click_link 'User profile'
       fill_in 'user[password]', with: '12345'
       fill_in 'user[password_confirmation]', with: '12345'
-      click_button 'Сохранить'
+      click_button I18n.t(:save_label)
       expect(page).to have_content 'User profile successfully updated.'
     end
 
