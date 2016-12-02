@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 module Dashboard
   class TrainerController < Dashboard::BaseController
-    include CardFinder, Welcome
+    include FindCard, Index
+    before_action :find_card, only: [:review_card]
 
     def review_card
-      @card = find_card params[:card_id]
-
       check_result = @card.check_translation(trainer_params[:user_translation])
 
       if check_result[:state]

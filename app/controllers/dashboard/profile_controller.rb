@@ -6,7 +6,7 @@ module Dashboard
     def update
       if current_user.update(user_params)
         redirect_to edit_profile_path,
-                    notice: 'Профиль пользователя успешно обновлен.'
+                    notice: t(:user_profile_successfully_updated_notice)
       else
         respond_with current_user
       end

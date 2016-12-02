@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 module Dashboard
   class BlocksController < Dashboard::BaseController
-    before_action :set_block, only: [:destroy, :edit, :update, :set_as_current,
+    before_action :find_block, only: [:destroy, :edit, :update, :set_as_current,
                                      :reset_as_current]
 
     def index
@@ -48,7 +48,7 @@ module Dashboard
 
     private
 
-    def set_block
+    def find_block
       @block = current_user.blocks.find(params[:id])
     end
 

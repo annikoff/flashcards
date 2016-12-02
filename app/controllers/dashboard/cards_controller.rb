@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 module Dashboard
   class CardsController < Dashboard::BaseController
-    before_action :set_card, only: [:destroy, :edit, :update]
+    include FindCard
+    before_action :find_card, only: [:destroy, :edit, :update]
 
     def index
       @cards = current_user.cards.all.order('review_date')
@@ -14,6 +15,7 @@ module Dashboard
     def edit; end
 
     def create
+      raise ActiveRecord::RecordNotFound if @card.blank?
       @card = current_user.cards.build(card_params)
       if @card.save
         redirect_to cards_path
@@ -31,15 +33,12 @@ module Dashboard
     end
 
     def destroy
+      raise ActiveRecord::RecordNotFound if @card.blank?
       @card.destroy
       respond_with @card
     end
 
     private
-
-    def set_card
-      @card = find_card params[:id]
-    end
 
     def card_params
       params

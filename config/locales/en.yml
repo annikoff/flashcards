@@ -11,8 +11,8 @@ en:
   password_label: 'Password'
   password_confirmation_label: 'Password Confirmation'
   sing_up_label: 'Sing up'
-  log_in_label: 'Log in'
   sing_in_label: 'Sing in'
+  log_in_label: 'Log in'
   all_decks_label: 'All deck'
   add_deck_label: 'Add deck'
   all_cards_label: 'All cards'
@@ -20,7 +20,12 @@ en:
   user_profile_label: 'User profile'
   delete_user_label: 'Delete user'
   log_out_label: 'Log out'
+  save_label: 'Save'
+  locale_label: 'Locale'
+  choose_password_prompt: 'Choose password'
   user_created_successfully_notice: 'User created successfully.'
+  user_profile_successfully_updated_notice: 'User profile successfully updated.'
+  user_successfully_deleted_notice: 'User successfully deleted.'
   please_log_in_alert: 'Please log in.'
   not_found_alert: 'You have turned to a non-existent record.'
   log_in_is_successful_notice: 'Login is successful.'
@@ -38,9 +43,10 @@ en:
   please_log_in: 'Please log in.'
 
   activerecord:
-      errors:
-        messages:
-          blank: 'Fill out the field.'
-          too_short: 'Short value.'
-          confirmation: 'Values do not match.'
-          taken: 'Not a unique value.'
+    errors:
+      messages:
+        blank: 'Fill out the field.'
+        too_short: 'Short value.'
+        confirmation: 'Values do not match.'
+        taken: 'Not a unique value.'
+        invalid: 'Invalid format.'

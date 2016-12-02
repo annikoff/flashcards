@@ -3,7 +3,7 @@ module Dashboard
   class UsersController < Dashboard::BaseController
     def destroy
       current_user.destroy
-      redirect_to login_path, notice: 'Пользователь успешно удален.'
+      redirect_to login_path, notice: t(:user_successfully_deleted_notice)
     end
 
     private
