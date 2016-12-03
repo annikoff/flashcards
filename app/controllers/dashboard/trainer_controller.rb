@@ -1,48 +1,40 @@
-class Dashboard::TrainerController < Dashboard::BaseController
+# frozen_string_literal: true
+module Dashboard
+  class TrainerController < Dashboard::BaseController
+    include FindCard
+    before_action :find_card, only: [:review_card]
 
-  def index
-    if params[:id]
-      @card = current_user.cards.find(params[:id])
-    else
-      if current_user.current_block
-        @card = current_user.current_block.cards.pending.first
-        @card ||= current_user.current_block.cards.repeating.first
-      else
-        @card = current_user.cards.pending.first
-        @card ||= current_user.cards.repeating.first
+    def index
+      @card = current_user.first_acceptable_card
+      respond_to do |format|
+        format.html
+        format.js
       end
     end
 
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
+    def review_card
+      check_result = @card.check_translation(trainer_params[:user_translation])
 
-  def review_card
-    @card = current_user.cards.find(params[:card_id])
-
-    check_result = @card.check_translation(trainer_params[:user_translation])
-
-    if check_result[:state]
-      if check_result[:distance] == 0
-        flash[:notice] = t(:correct_translation_notice)
+      if check_result[:state]
+        if check_result[:distance].zero?
+          flash[:notice] = t('global.notices.correct_translation')
+        else
+          flash[:alert] = t 'global.alerts.translation_from_misprint',
+                            user_translation: trainer_params[:user_translation],
+                            original_text: @card.original_text,
+                            translated_text: @card.translated_text
+        end
+        redirect_to trainer_path
       else
-        flash[:alert] = t 'translation_from_misprint_alert',
-                          user_translation: trainer_params[:user_translation],
-                          original_text: @card.original_text,
-                          translated_text: @card.translated_text
+        flash[:alert] = t('global.alerts.incorrect_translation')
+        redirect_to trainer_path(id: @card.id)
       end
-      redirect_to trainer_path
-    else
-      flash[:alert] = t(:incorrect_translation_alert)
-      redirect_to trainer_path(id: @card.id)
     end
-  end
 
-  private
+    private
 
-  def trainer_params
-    params.permit(:user_translation)
+    def trainer_params
+      params.permit(:user_translation)
+    end
   end
 end

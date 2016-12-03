@@ -1,15 +1,17 @@
-class Dashboard::BaseController < ApplicationController
-  before_action :require_login
-  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+# frozen_string_literal: true
+module Dashboard
+  class BaseController < ApplicationController
+    before_action :require_login
+    rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
-  private
+    private
 
-  def not_authenticated
-    redirect_to login_path, alert: t(:please_log_in)
-  end
+    def not_authenticated
+      redirect_to login_path, alert: t('global.alerts.please_log_in')
+    end
 
-  def not_found
-    flash[:alert] = 'Вы обратились к несуществующей записи.'
-    redirect_to root_path
+    def not_found
+      redirect_to root_path, alert: t('global.alerts.not_found')
+    end
   end
 end

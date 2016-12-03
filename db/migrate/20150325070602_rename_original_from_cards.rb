@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class RenameOriginalFromCards < ActiveRecord::Migration
   def change
     rename_column :cards, :original, :original_text

@@ -1,8 +1,9 @@
+# frozen_string_literal: true
 class Block < ActiveRecord::Base
   has_many :cards, dependent: :destroy
   belongs_to :user
 
-  validates :title, presence: { message: 'Необходимо заполнить поле.' }
+  validates :title, presence: true
 
   def current?
     id == user.current_block_id

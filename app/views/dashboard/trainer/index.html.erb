@@ -1,3 +1,8 @@
 <div id="trainer_content">
-  <%= render 'review_form',  card: @card %>
+  <% if @card %>
+    <h2><%= t('.heading') %></h2>
+    <%= render 'review_form',  card: @card %>
+  <% else %>
+     <p class="lead"><%= t('.no_cards_to_review') %></p>
+  <% end %>
 </div>

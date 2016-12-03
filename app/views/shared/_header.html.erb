@@ -4,36 +4,40 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <% if current_user %>
-            <%= link_to t(:flashcards_label), trainer_path, class: "navbar-brand" %>
+            <%= link_to t(:app_name), trainer_path, class: "navbar-brand" %>
           <% else %>
-            <%= link_to t(:flashcards_label), root_path, class: "navbar-brand" %>
+            <%= link_to t(:app_name), root_path, class: "navbar-brand" %>
           <% end %>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <% if current_user %>
             <ul class="nav navbar-nav navbar-left">
-              <li><%= link_to t(:all_decks_label), blocks_path %></li>
-              <li><%= link_to t(:add_deck_label), new_block_path %></li>
-              <li><%= link_to t(:all_cards_label), cards_path %></li>
-              <li><%= link_to t(:add_card_label), new_card_path %></li>
+              <li><%= link_to t('dashboard.blocks.index.heading'), blocks_path %></li>
+              <li><%= link_to t('dashboard.blocks.new.heading'), new_block_path %></li>
+              <li><%= link_to t('dashboard.cards.index.heading'), cards_path %></li>
+              <li><%= link_to t('dashboard.cards.new.heading'), new_card_path %></li>
             </ul>
           <% end %>
           <p class="navbar-text navbar-right">
             <% if current_user %>
-              <%= link_to t(:user_profile_label), edit_profile_path(current_user),
+              <%= link_to t('global.actions.edit_profile'),
+                          edit_profile_path(current_user),
                           class: 'navbar-link' %> |
-              <%= link_to t(:delete_user_label), user_path(current_user),
+              <%= link_to t('global.actions.delete_user'),
+                          user_path(current_user),
                           method: :delete, class: 'navbar-link',
-                          data: { confirm: 'Удалить пользователя?' } %> |
-              <%= link_to t(:log_out_label), :logout, method: :post,
+                          data: {
+                              confirm: t('global.confirmations.deletion')
+                          } %> |
+              <%= link_to t('global.actions.log_out'), :logout, method: :post,
                           class: 'navbar-link' %>
             <% else %>
-              <%= link_to t(:sing_up_label), new_user_path,
+              <%= link_to t('global.actions.sing_up'), new_user_path,
                           class: 'navbar-link' %> |
-              <%= link_to t(:log_in_with_github_label),
+              <%= link_to t('global.actions.log_in_with_github'),
                           auth_at_provider_path(provider: :github),
                           class: 'navbar-link'%> |
-              <%= link_to t(:log_in_label), :login, class: 'navbar-link' %> |
+              <%= link_to t('global.actions.log_in'), :login, class: 'navbar-link' %> |
               <% I18n.available_locales.each do |locale| %>
                 <%=link_to locale, root_path(user_locale: locale),
                            class: 'navbar-link'%>

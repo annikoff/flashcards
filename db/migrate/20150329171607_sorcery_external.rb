@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class SorceryExternal < ActiveRecord::Migration
   def change
     create_table :authentications do |t|

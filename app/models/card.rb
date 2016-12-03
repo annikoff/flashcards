@@ -1,35 +1,42 @@
+# frozen_string_literal: true
 require 'super_memo'
 
 class Card < ActiveRecord::Base
   belongs_to :user
   belongs_to :block
-  validates :user_id, presence: true
   before_validation :set_review_date_as_now, on: :create
   validate :texts_are_not_equal
-  validates :original_text, :translated_text, :review_date,
-            presence: { message: 'Необходимо заполнить поле.' }
-  validates :user_id, presence: { message: 'Ошибка ассоциации.' }
-  validates :block_id,
-            presence: { message: 'Выберите колоду из выпадающего списка.' }
+  validates :original_text, :translated_text, :review_date, presence: true
+  validates :user_id, :block_id, presence: true
   validates :interval, :repeat, :efactor, :quality, :attempt, presence: true
 
   mount_uploader :image, CardImageUploader
 
-  scope :pending, -> { where('review_date <= ?', Time.now).order('RANDOM()') }
+  scope :pending, lambda {
+    where('review_date <= ?', Time.current).order('RANDOM()')
+  }
   scope :repeating, -> { where('quality < ?', 4).order('RANDOM()') }
 
   def check_translation(user_translation)
     distance = Levenshtein.distance(full_downcase(translated_text),
                                     full_downcase(user_translation))
-
-    sm_hash = SuperMemo.algorithm(interval, repeat, efactor, attempt, distance, 1)
+    options = {
+      interval: interval,
+      repeat: repeat,
+      efactor: efactor,
+      attempt: attempt,
+      distance: distance,
+      distance_limit: 1
+    }
+    sm_hash = SuperMemo.algorithm options
 
     if distance <= 1
-      sm_hash.merge!({ review_date: Time.now + interval.to_i.days, attempt: 1 })
+      sm_hash[:review_date] = Time.current + interval.to_i.days
+      sm_hash[:attempt] = 1
       update(sm_hash)
       { state: true, distance: distance }
     else
-      sm_hash.merge!({ attempt: [attempt + 1, 5].min })
+      sm_hash[:attempt] = [attempt + 1, 5].min
       update(sm_hash)
       { state: false, distance: distance }
     end
@@ -47,13 +54,12 @@ class Card < ActiveRecord::Base
   protected
 
   def set_review_date_as_now
-    self.review_date = Time.now
+    self.review_date = Time.current
   end
 
   def texts_are_not_equal
-    if full_downcase(original_text) == full_downcase(translated_text)
-      errors.add(:original_text, 'Вводимые значения должны отличаться.')
-    end
+    return if full_downcase(original_text) != full_downcase(translated_text)
+    errors.add :original_text, :input_values_must_be_different
   end
 
   def full_downcase(str)

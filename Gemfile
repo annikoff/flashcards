@@ -1,39 +1,44 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
 
-ruby '2.1.4'
+ruby '2.3.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '5.0.0.1'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
-gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'puma'
 
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'sass-rails', '~>  5.0.6'
+gem 'coffee-rails', '~> 4.2.1'
+gem 'uglifier', '>= 3.0.3'
+gem 'jbuilder', '~> 2.6.1'
 gem 'jquery-rails'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
-
+gem 'sdoc', '~> 0.4.2', group: :doc
 gem 'rake'
-gem 'simple_form'
 gem 'nokogiri'
-gem 'seedbank'
-gem 'sorcery'
+gem 'simple_form'
 gem 'faraday'
-gem 'figaro'
+gem 'seedbank'
 gem 'carrierwave'
-gem 'mini_magick'
+gem 'sorcery'
+gem 'figaro'
 gem 'fog-aws'
-gem 'rails_12factor', group: :production
 gem 'levenshtein'
-gem 'whenever', require: false
+gem 'mini_magick'
 gem 'http_accept_language'
-gem 'routing-filter'
-gem 'rollbar'
+gem 'rails_12factor', group: :production
 gem 'newrelic_rpm'
+gem 'whenever', require: false
+gem 'responders'
+gem 'rollbar'
+gem 'routing-filter'
 
 group :development, :test do
-  gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'rubocop'
 end

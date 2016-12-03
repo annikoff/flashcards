@@ -1,13 +1,19 @@
-<%= form_tag user_sessions_path, method: :post do %>
+<%= simple_form_for user,
+                    url: user_sessions_path, method: :post do |f| %>
   <div class="form-group">
-    <%= label_tag t(:email_label) %><br />
-    <%= text_field_tag :email, nil, class: 'form-control', required: true,
-                       autofocus: true %>
+    <%= f.input :email, input_html: { class: 'form-control',
+                                      required: true,
+                                      autofocus: true,
+                                      value: nil } %>
   </div>
+
   <div class="form-group">
-    <%= label_tag t(:password_label) %><br />
-    <%= password_field_tag :password, nil, class: 'form-control',
-                           required: true %>
+    <%= f.input :password, input_html: { class: 'form-control',
+                                         required: true,
+                                         autofocus: true,
+                                         value: nil } %>
   </div>
-  <%= submit_tag t(:log_in_label), class: 'btn btn-default' %>
+
+  <%= f.button :submit, t('global.actions.log_in'), class: 'btn btn-default' %>
 <% end %>
+

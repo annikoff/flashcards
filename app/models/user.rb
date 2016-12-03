@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class User < ActiveRecord::Base
   has_many :cards, dependent: :destroy
   has_many :blocks, dependent: :destroy
@@ -12,25 +13,39 @@ class User < ActiveRecord::Base
     config.authentications_class = Authentication
   end
 
-  validates :password, confirmation: true, presence: true,
+  validates :password,
+            confirmation: true,
+            presence: true,
             length: { minimum: 3 }
   validates :password_confirmation, presence: true
-  validates :email, uniqueness: true, presence: true,
+  validates :email,
+            uniqueness: true,
+            presence: true,
             format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/ }
-  validates :locale, presence: true,
-            inclusion: { in: I18n.available_locales.map(&:to_s),
-                         message: 'Выберите локаль из выпадающего списка.' }
+  validates :locale,
+            presence: true,
+            inclusion: { in: I18n.available_locales.map(&:to_s) }
 
-  def has_linked_github?
+  def linked_to_github?
     authentications.where(provider: 'github').present?
   end
 
-  def set_current_block(block)
+  def current_block=(block)
     update_attribute(:current_block_id, block.id)
   end
 
   def reset_current_block
     update_attribute(:current_block_id, nil)
+  end
+
+  def first_acceptable_card
+    if current_block
+      current_block.cards.pending.first ||
+        current_block.cards.repeating.first
+    else
+      cards.pending.first ||
+        cards.repeating.first
+    end
   end
 
   private

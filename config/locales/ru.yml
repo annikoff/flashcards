@@ -1,44 +1,115 @@
 ru:
-  welcome: 'Добро пожаловать.'
-  original_text_label: 'Оригинал'
-  translated_text_label: 'Перевод'
-  current_card_label: 'Текущая карточка'
-  check_card_button: 'Проверить'
-  no_review_card_text: 'Вы изучили все доступные карточки.
-      Ожидайте наступления даты пересмотра.'
-  registration_label: 'Регистрация'
-  email_label: 'E-mail'
-  password_label: 'Пароль'
-  password_confirmation_label: 'Подтверждение пароля'
-  sing_up_label: 'Зарегистрироваться'
-  sing_in_label: 'Вход'
-  log_in_label: 'Войти'
-  all_decks_label: 'Все колоды'
-  add_deck_label: 'Добавить колоду'
-  all_cards_label: 'Все карточки'
-  add_card_label: 'Добавить карточку'
-  user_profile_label: 'Профиль пользователя'
-  delete_user_label: 'Удалить пользователя'
-  log_out_label: 'Выйти'
-  user_created_successfully_notice: 'Пользователь успешно создан.'
-  please_log_in_alert: 'Пожалуйста авторизуйтесь.'
-  not_found_alert: 'Вы обратились к несуществующей записи.'
-  log_in_is_successful_notice: 'Вход выполнен успешно.'
-  not_logged_in_alert: 'Вход не выполнен. Проверте вводимые E-mail и Пароль.'
-  flashcards_label: 'Флэшкарточкер'
-  log_in_with_github_label: 'Войти через Github'
-  correct_translation_notice: 'Вы ввели верный перевод. Продолжайте.'
-  incorrect_translation_alert: 'Вы ввели не верный перевод. Повторите попытку.'
-  translation_from_misprint_alert: "Вы ввели перевод c опечаткой.
-      Ваш вариант: %{user_translation} / Оригинал: %{original_text} /
-      Перевод: %{translated_text}. Продолжайте."
-  log_in_is_successful_provider_notice: "Вход из аккаунта %{provider} выполнен успешно."
-  log_out_is_successful_notice: 'Выход выполнен успешно.'
-  log_out_failed_provider_alert: "Вход из аккаунта %{provider.titleize} не выполнен ."
-  please_log_in: 'Пожалуйста авторизуйтесь.'
+  app_name: 'Флэшкарточкер'
+
+  global:
+    promts:
+      choose: 'Выберите'
+    actions:
+      delete: 'Удалить'
+      save: 'Сохранить'
+      edit: 'Редактировать'
+      check: 'Проверить'
+      log_in: 'Войти'
+      log_in_with_github: 'Войти через Github'
+      sing_up: 'Зарегистрироваться'
+      log_out: 'Выйти'
+      edit_profile: 'Редактировать профиль'
+      delete_user: 'Удалить пользователя'
+    confirmations:
+      deletion: 'Подтвердите удаление'
+    notices:
+      log_in_is_successful: 'Вход выполнен успешно.'
+      log_out_is_successful: 'Выход выполнен успешно.'
+      log_in_is_successful_provider: "Вход из аккаунта %{provider} выполнен успешно."
+      user_created_successfully:  'Пользователь успешно создан.'
+      user_successfully_deleted: 'Пользователь успешно удален.'
+      user_successfully_updated: 'Профиль пользователя успешно обновлен.'
+      correct_translation: 'Вы ввели верный перевод. Продолжайте.'
+    alerts:
+      please_log_in: 'Пожалуйста авторизуйтесь.'
+      not_found: 'Вы обратились к несуществующей записи.'
+      not_logged_in: 'Вход не выполнен. Проверте вводимые E-mail и Пароль.'
+      log_out_failed_provider: "Вход из аккаунта %{provider.titleize} не выполнен ."
+      incorrect_translation: 'Вы ввели не верный перевод. Повторите попытку.'
+      translation_from_misprint: 'Вы ввели перевод c опечаткой.
+        Ваш вариант: %{user_translation} / Оригинал: %{original_text} /
+        Перевод: %{translated_text}. Продолжайте.'
+
+  cards_mailer:
+    pending_cards_notification:
+      go_to_website: 'Перейти на сайт для просмотра карточек'
+
+  dashboard:
+    cards:
+      index:
+        heading: 'Все карточки'
+        original_text_label: 'Оригинал'
+        translated_text_label: 'Перевод'
+        review_label: 'Пересмотр'
+      new:
+        heading: 'Добавить карточку'
+      edit:
+        heading: 'Редактировать карточку'
+    blocks:
+      index:
+        heading: 'Все колоды'
+        set_as_common: 'Сделать обычной'
+        set_as_current: 'Сделать текущей'
+      new:
+        heading: 'Добавить колоду'
+      edit:
+        heading: 'Редактировать колоду'
+    profile:
+      edit:
+        heading: 'Профиль пользователя'
+    trainer:
+      index:
+        heading: 'Текущая карточка'
+        no_cards_to_review: 'Вы изучили все доступные карточки.
+          Ожидайте наступления даты пересмотра.'
+
+  home:
+    user_sessions:
+      new:
+        heading: 'Вход'
+    users:
+      new:
+        heading: 'Регистрация'
+
+  main:
+    index:
+      welcome: 'Добро пожаловать.'
 
   activerecord:
+    models:
+      card: 'Карта'
+      block: 'Колода'
+      user: 'Пользователь'
+    attributes:
+      card:
+        original_text: 'Оригинал'
+        translated_text: 'Перевод'
+        image: 'Изображение'
+        block_id: 'Колода'
+      block:
+        title: 'Название'
+      user:
+        email: 'E-mail'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        locale: 'Локаль'
     errors:
+      models:
+        card:
+          attributes:
+            block_id:
+              blank: 'Выберите колоду из выпадающего списка.'
+            original_text:
+              input_values_must_be_different: 'Вводимые значения должны отличаться.'
+        user:
+          attributes:
+            locale:
+              blank: 'Выберите локаль из выпадающего списка.'
       messages:
         blank: 'Заполните поле.'
         too_short: 'Короткое значение.'

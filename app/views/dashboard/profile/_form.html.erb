@@ -2,24 +2,22 @@
                     method: :put do |f| %>
   <div class="form-group">
     <%= f.input :locale, priority: I18n.default_locale,
-                collection: I18n.available_locales, include_blank: false,
-                prompt: 'Выберите локаль',
-                label: 'Локаль',
+                collection: I18n.available_locales, include_blank: true,
+                prompt: t('global.promts.choose'),
                 input_html: { class: 'form-control', required: true } %>
   </div>
   <div class="form-group">
-    <%= f.input :email, as: :email, label: 'E-mail',
+    <%= f.input :email, as: :email,
                 input_html: { class: 'form-control', required: true,
                               autofocus: true } %>
   </div>
   <div class="form-group">
-    <%= f.input :password, as: :password, label: 'Пароль',
+    <%= f.input :password, as: :password,
                 input_html: { class: 'form-control', required: true } %>
   </div>
   <div class="form-group">
     <%= f.input :password_confirmation, as: :password,
-                label: 'Подтверждение пароля',
                 input_html: { class: 'form-control', required: true } %>
   </div>
-  <%= f.button :submit, 'Сохранить', class: 'btn btn-default' %>
+  <%= f.button :submit, t('global.actions.save'), class: 'btn btn-default' %>
 <% end %>
