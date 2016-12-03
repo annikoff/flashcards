@@ -8,9 +8,7 @@ gem 'rails', '5.0.0.1'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
-# Use Unicorn as the app server
-gem 'unicorn'
-gem 'unicorn-worker-killer'
+gem 'puma'
 
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '~>  5.0.6'
