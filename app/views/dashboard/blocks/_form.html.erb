@@ -1,9 +1,9 @@
 <%= simple_form_for block do |f| %>
   <div class="form-group">
-    <%= f.input :title, label: t(:title_label),
-                input_html: { class: 'form-control', required: true,
-                              autofocus: true } %>
+    <%= f.input :title, input_html: { class: 'form-control',
+                                      required: true,
+                                      autofocus: true } %>
   </div>
 
-  <%= f.button :submit, t(:save_label), class: 'btn btn-default' %>
+  <%= f.button :submit, t('global.actions.save'), class: 'btn btn-default' %>
 <% end %>

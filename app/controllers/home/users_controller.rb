@@ -13,7 +13,8 @@ module Home
       @user = User.new(user_params)
       if @user.save
         auto_login(@user)
-        redirect_to root_path, notice: t(:user_created_successfully_notice)
+        redirect_to root_path,
+                    notice: t('global.notices.user_created_successfully')
       else
         respond_with @user
       end

@@ -10,13 +10,19 @@ module Home
     end
 
     def create
-      @user = login(params[:email], params[:password])
+      @user = login(user_params[:email], user_params[:password])
       if @user
-        redirect_back_or_to root_path, notice: t(:log_in_is_successful_notice)
+        redirect_back_or_to root_path,
+                            notice: t('global.notices.log_in_is_successful')
       else
-        flash.now[:alert] = t(:not_logged_in_alert)
-        render action: 'new'
+        redirect_to login_path, alert: t('global.alerts.not_logged_in')
       end
+    end
+
+    private
+
+    def user_params
+      params.require(:user).permit(:email, :password)
     end
   end
 end

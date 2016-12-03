@@ -2,8 +2,8 @@
 module LoginHelper
   def login(email, password, action)
     click_link action
-    fill_in 'email', with: email
-    fill_in 'password', with: password
+    fill_in 'user[email]', with: email
+    fill_in 'user[password]', with: password
     click_button action
   end
 

@@ -102,10 +102,10 @@ describe 'password authentication' do
     it 'available locale' do
       click_link 'en'
       register('test@test.com', '12345', '12345', 'Sing up')
-      click_link 'User profile'
+      click_link 'Edit profile'
       fill_in 'user[password]', with: '12345'
       fill_in 'user[password_confirmation]', with: '12345'
-      click_button I18n.t(:save_label)
+      click_button I18n.t('global.actions.save')
       expect(page).to have_content 'User profile successfully updated.'
     end
 

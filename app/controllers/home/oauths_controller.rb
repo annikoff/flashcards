@@ -12,7 +12,7 @@ module Home
       @user = login_from(provider)
       if @user
         redirect_to trainer_path,
-                    notice: t(:log_in_is_successful_provider_notice),
+                    notice: t('global.notices.log_in_is_successful_provider'),
                     provider: provider.titleize
       else
         begin
@@ -20,11 +20,11 @@ module Home
           reset_session
           auto_login(@user)
           redirect_to trainer_path,
-                      notice: t(:log_in_is_successful_provider_notice),
+                      notice: t('global.notices.log_in_is_successful_provider'),
                       provider: provider.titleize
         rescue
           redirect_to user_sessions_path,
-                      alert: t(:log_out_failed_provider_alert),
+                      alert: t('global.alerts.log_out_failed_provider'),
                       provider: provider.titleize
         end
       end

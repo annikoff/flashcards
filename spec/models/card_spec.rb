@@ -135,7 +135,7 @@ describe Card do
     card = Card.create(original_text: 'дом', translated_text: 'house',
                        block_id: 1)
     expect(card.errors[:user_id])
-      .to include('Ошибка ассоциации.')
+      .to include('Заполните поле.')
   end
 
   it 'create card witout block_id' do

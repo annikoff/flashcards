@@ -3,6 +3,7 @@ module Dashboard
   class CardsController < Dashboard::BaseController
     include FindCard
     before_action :find_card, only: [:destroy, :edit, :update]
+    before_action :find_blocks, only: [:edit, :new]
 
     def index
       @cards = current_user.cards.all.order('review_date')
@@ -43,6 +44,10 @@ module Dashboard
         .require(:card)
         .permit(:original_text, :translated_text, :review_date,
                 :image, :image_cache, :remove_image, :block_id)
+    end
+
+    def find_blocks
+      @blocks = current_user.blocks.all.order('title')
     end
   end
 end

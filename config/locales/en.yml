@@ -1,69 +1,115 @@
 en:
   app_name: 'Flashcards'
-  title_label: 'Title'
-  welcome: 'Welcome.'
-  original_text_label: 'Original'
-  translated_text_label: 'Translation'
-  current_card_label: 'Current card'
-  image_label: 'Image'
-  delete_image_label: 'Delete image'
-  check_card_button: 'Check'
-  no_review_card_text: 'You have studied all available cards.
-      Expect the date of revision.'
-  registration_label: 'Registration'
-  email_label: 'E-mail'
-  password_label: 'Password'
-  password_confirmation_label: 'Password Confirmation'
-  sing_up_label: 'Sing up'
-  sing_in_label: 'Sing in'
-  log_in_label: 'Log in'
-  decks_label: 'Decks'
-  choose_deck_prompt: 'Choose deck'
-  all_decks_label: 'All deck'
-  add_deck_label: 'Add deck'
-  edit_deck_label: 'Edit deck'
-  set_as_common_label: 'Set as common'
-  set_as_current_label: 'Set as current'
-  all_cards_label: 'All cards'
-  add_card_label: 'Add card'
-  edit_card_label: 'Edit card'
-  user_profile_label: 'User profile'
-  delete_user_label: 'Delete user'
-  log_out_label: 'Log out'
-  save_label: 'Save'
-  locale_label: 'Locale'
-  choose_password_prompt: 'Choose password'
-  user_created_successfully_notice: 'User created successfully.'
-  user_profile_successfully_updated_notice: 'User profile successfully updated.'
-  user_successfully_deleted_notice: 'User successfully deleted.'
-  please_log_in_alert: 'Please log in.'
-  not_found_alert: 'You have turned to a non-existent record.'
-  log_in_is_successful_notice: 'Login is successful.'
-  not_logged_in_alert: 'Not logged in. Check the input E-mail and Password.'
-  flashcards_label: 'Flashcards'
-  log_in_with_github_label: 'Log in with Github'
-  correct_translation_notice: 'You have entered the correct translation. Keep It Up.'
-  incorrect_translation_alert: 'You entered an invalid translation. Please try again.'
-  translation_from_misprint_alert: "You entered translation from misprint.
-      User translation: %{user_translation} / Original text: %{original_text} /
-      Translated text: %{translated_text}. Please try again."
-  log_in_is_successful_provider_notice: "Log in of your account %{provider} is successful."
-  log_out_is_successful_notice: 'Log out is successful.'
-  log_out_failed_provider_alert: "Log out of your account %{provider} failed."
-  please_log_in: 'Please log in.'
-  confirm_deletion: 'Confirm deletion'
-  edit_label: 'Edit'
-  delete_label: 'Delete'
-  review_label: 'Review'
-  go_to_website_to_look_at_cards: 'Go to website to look at cards'
 
-  error_message_input_values_must_be_different: 'Input values must be different'
-  error_message_select_deck_from_the_list: 'Select a deck from the list'
-  error_message_association_error: 'Association error.'
-  error_message_select_local_from_the_list: 'Select local from the list'
+  global:
+    promts:
+      choose: 'Choose'
+    actions:
+      delete: 'Delete'
+      save: 'Save'
+      edit: 'Edit'
+      check: 'Check'
+      log_in: 'Log in'
+      log_in_with_github: 'Log in with Github'
+      sing_up: 'Sing up'
+      log_out: 'Log out'
+      edit_profile: 'Edit profile'
+      delete_user: 'Delete user'
+    confirmations:
+      deletion: 'Confirm deletion'
+    notices:
+      log_in_is_successful: 'Login is successful.'
+      log_out_is_successful: 'Log out is successful.'
+      log_in_is_successful_provider: 'Log in of your account %{provider} is successful.'
+      user_created_successfully:  'User created successfully.'
+      user_successfully_deleted: 'User successfully deleted.'
+      user_successfully_updated: 'User profile successfully updated.'
+      correct_translation: 'You have entered the correct translation. Keep It Up.'
+    alerts:
+      please_log_in: 'Please log in.'
+      not_found: 'You have turned to a non-existent record.'
+      not_logged_in: 'Not logged in. Check the input E-mail and Password.'
+      log_out_failed_provider: 'Log out of your account %{provider} failed.'
+      incorrect_translation: 'You entered an invalid translation. Please try again.'
+      translation_from_misprint: 'You entered translation from misprint.
+        User translation: %{user_translation} / Original text: %{original_text} /
+        Translated text: %{translated_text}. Please try again.'
+
+  cards_mailer:
+    pending_cards_notification:
+      go_to_website: 'Go to website to look at cards'
+
+  dashboard:
+    cards:
+      index:
+        heading: 'All cards'
+        original_text_label: 'Original'
+        translated_text_label: 'Translation'
+        review_label: 'Review'
+      new:
+        heading: 'Add card'
+      edit:
+        heading: 'Edit card'
+    blocks:
+      index:
+        heading: 'All decks'
+        set_as_common: 'Set as a common'
+        set_as_current: 'Set as a current'
+      new:
+        heading: 'Add deck'
+      edit:
+        heading: 'Edit deck'
+    profile:
+      edit:
+        heading: 'User profile'
+    trainer:
+      index:
+        heading: 'Current card'
+        no_cards_to_review: 'You have studied all available cards.
+          Expect the date of revision.'
+
+  home:
+    user_sessions:
+      new:
+        heading: 'Log in'
+    users:
+      new:
+        heading: 'Sing up'
+
+  main:
+    index:
+      welcome: 'Welcome.'
 
   activerecord:
+    models:
+      card: 'Deck'
+      block: 'Колода'
+      user: 'User'
+    attributes:
+      card:
+        original_text: 'Original'
+        translated_text: 'Translation'
+        image: 'Image'
+        block_id: 'Deck'
+      block:
+        title: 'Title'
+      user:
+        email: 'E-mail'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+        locale: 'Locale'
     errors:
+      models:
+        card:
+          attributes:
+            block_id:
+              blank: 'Select a deck from the list'
+            original_text:
+              input_values_must_be_different: 'Input values must be different'
+        user:
+          attributes:
+            locale:
+              blank: 'Select local from the list'
       messages:
         blank: 'Fill out the field.'
         too_short: 'Short value.'
