@@ -9,8 +9,12 @@ Vagrant.configure('2') do |config|
     vb.memory = '2048'
     vb.customize ['modifyvm', :id, '--cpuexecutioncap', '70']
   end
-  config.vm.network 'forwarded_port', guest: 3000, host: 3000
+  config.vm.network 'forwarded_port', guest: 9292, host: 3000
   config.vm.provision 'shell',
                       path: 'config/vagrant.sh',
-                      env: { 'RAILS_ENV' => ENV['RAILS_ENV'] }
+                      env: {
+                        'RUBY_VERSION' => '2.3.2',
+                        'RAILS_ENV' => ENV['RAILS_ENV'],
+                      },
+                      privileged: false
 end
