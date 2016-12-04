@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Install git
+sudo yum -y install git
+
 # Install rvm
 command curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
 curl -L get.rvm.io | bash -s $1 #--ignore-dotfiles
@@ -32,14 +35,16 @@ sudo yum -y install epel-release
 sudo yum -y install nodejs
 
 # Copy database config
+cd /vagrant
 cp config/database.yml.example config/database.yml
 
 # Install gems
-export RAILS_ENV
 gem install bundler
 gem install pg -- --with-pg-config=/usr/pgsql-9.5/bin/pg_config
 bundle install
+
 bundle exec rake db:setup
+if [ "$RAILS_ENV" = "production" ]; then bundle exec rake assets:precompile; fi;
 
 # Run rails application
-rackup
+puma -p 3000 -b tcp://0.0.0.0 -d
