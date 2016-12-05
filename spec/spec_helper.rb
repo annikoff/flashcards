@@ -1,6 +1,11 @@
 # frozen_string_literal: true
-require 'simplecov'
-SimpleCov.start
+if ENV['CI']
+  require 'codeclimate-test-reporter'
+  CodeClimate::TestReporter.start
+else
+  require 'simplecov'
+  SimpleCov.start
+end
 require 'capybara/rspec'
 require 'factory_girl_rails'
 
