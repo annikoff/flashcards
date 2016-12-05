@@ -6,10 +6,6 @@ module Dashboard
 
     private
 
-    def not_authenticated
-      redirect_to login_path, alert: t('global.alerts.please_log_in')
-    end
-
     def not_found
       redirect_to root_path, alert: t('global.alerts.not_found')
     end

@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def not_authenticated
+    redirect_to login_path, alert: t('global.alerts.please_log_in')
+  end
+
   def set_locale
     session[:locale] = I18n.locale = locale
   end
