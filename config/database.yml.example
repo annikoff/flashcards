@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  username: vagrant
+  password: vagrant
+  pool: 5
+
+production:
+  <<: *default
+  database: flashcards_production
+
+development:
+  <<: *default
+  database: flashcards_development
+
+test:
+  <<: *default
+  database: flashcards_test

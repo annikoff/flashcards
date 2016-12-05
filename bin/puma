@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec pumactl -F /vagrant/config/puma.rb $1
