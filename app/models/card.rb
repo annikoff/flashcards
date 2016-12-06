@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'super_memo'
 
-class Card < ActiveRecord::Base
+class Card < ApplicationRecord
   belongs_to :user
   belongs_to :block
   before_validation :set_review_date_as_now, on: :create

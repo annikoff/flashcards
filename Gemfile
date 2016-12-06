@@ -36,6 +36,7 @@ gem 'responders'
 gem 'rollbar'
 gem 'routing-filter'
 gem 'rails_admin', '~> 1.0'
+gem 'rolify'
 
 group :development, :test do
   gem 'capybara'

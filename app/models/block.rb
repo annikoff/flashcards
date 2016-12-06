@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class Block < ActiveRecord::Base
+class Block < ApplicationRecord
   has_many :cards, dependent: :destroy
   belongs_to :user
 

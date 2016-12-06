@@ -11,6 +11,13 @@
 require 'nokogiri'
 require 'open-uri'
 
+admin = User.create(email: 'admin@example.com',
+                    password: 'admin',
+                    password_confirmation: 'admin')
+admin.add_role :admin
+
+exit if Rails.env.production?
+
 user = User.create(email: 'user1@example.com',
                    password: '12345',
                    password_confirmation: '12345')
