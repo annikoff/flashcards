@@ -17,8 +17,8 @@ module CardAdmin
                        :created_at, :updated_at, :image
       end
       edit do
-        include_fields :original_text, :translated_text, :user, :review_date,
-                       :created_at, :updated_at, :image
+        include_fields :original_text, :translated_text, :user,
+                       :review_date, :image
       end
     end
   end

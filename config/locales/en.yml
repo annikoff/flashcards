@@ -119,6 +119,8 @@ en:
         created_at: 'Сreated date'
         updated_at: 'Updated date'
       role:
+        name: 'Name'
+        users: 'Users'
         created_at: 'Сreated date'
         updated_at: 'Updated date'
     errors:

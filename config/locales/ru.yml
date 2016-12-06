@@ -116,9 +116,12 @@ ru:
         locale: 'Локаль'
         cards: 'Карты'
         blocks: 'Колоды'
+        roles: 'Роли'
         created_at: 'Дата создания'
         updated_at: 'Дата обновления'
       role:
+        name: 'Назавание'
+        users: 'Пользователи'
         created_at: 'Дата создания'
         updated_at: 'Дата обновления'
     errors:

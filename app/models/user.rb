@@ -9,7 +9,6 @@ class User < ApplicationRecord
   before_validation :set_default_locale, on: :create
 
   accepts_nested_attributes_for :authentications
-
   include UserAdmin
 
   authenticates_with_sorcery! do |config|
