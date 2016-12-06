@@ -27,10 +27,13 @@ RailsAdmin.config do |config|
     show
     edit
     delete
-    show_in_app
+    show_in_app do
+      except ['User']
+    end
 
     ## With an audit adapter, you can add:
     # history_index
     # history_show
   end
+  config.included_models = ['User', 'Block', 'Card']
 end

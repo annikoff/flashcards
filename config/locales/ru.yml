@@ -83,9 +83,24 @@ ru:
 
   activerecord:
     models:
-      card: 'Карта'
-      block: 'Колода'
-      user: 'Пользователь'
+      card:
+        zero: 'Карт'
+        one: 'Карта'
+        few: 'Карты'
+        many: 'Карт'
+        other: 'Карт'
+      block:
+        zero: 'Колод'
+        one: 'Колода'
+        few: 'Колоды'
+        many: 'Колод'
+        other: 'Колод'
+      user:
+        zero: 'Пользователей'
+        one: 'Пользователь'
+        few: 'Пользователя'
+        many: 'Пользователей'
+        other: 'Пользователей'
     attributes:
       card:
         original_text: 'Оригинал'
@@ -99,6 +114,10 @@ ru:
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
         locale: 'Локаль'
+        created_at: 'Дата создания'
+        updated_at: 'Дата обновления'
+        cards: 'Карты'
+        blocks: 'Колоды'
     errors:
       models:
         card:
