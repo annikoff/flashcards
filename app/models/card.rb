@@ -11,6 +11,7 @@ class Card < ApplicationRecord
   validates :interval, :repeat, :efactor, :quality, :attempt, presence: true
 
   mount_uploader :image, CardImageUploader
+  include CardAdmin
 
   scope :pending, lambda {
     where('review_date <= ?', Time.current).order('RANDOM()')

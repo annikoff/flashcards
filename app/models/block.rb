@@ -4,6 +4,7 @@ class Block < ApplicationRecord
   belongs_to :user
 
   validates :title, presence: true
+  include BlockAdmin
 
   def current?
     id == user.current_block_id

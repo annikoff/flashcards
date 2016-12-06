@@ -84,40 +84,43 @@ ru:
   activerecord:
     models:
       card:
-        zero: 'Карт'
         one: 'Карта'
-        few: 'Карты'
-        many: 'Карт'
-        other: 'Карт'
+        other: 'Карты'
       block:
-        zero: 'Колод'
         one: 'Колода'
-        few: 'Колоды'
-        many: 'Колод'
-        other: 'Колод'
+        other: 'Колоды'
       user:
-        zero: 'Пользователей'
         one: 'Пользователь'
-        few: 'Пользователя'
-        many: 'Пользователей'
-        other: 'Пользователей'
+        other: 'Пользователи'
+      role:
+        one: 'Роль'
+        other: 'Роли'
     attributes:
       card:
         original_text: 'Оригинал'
         translated_text: 'Перевод'
         image: 'Изображение'
-        block_id: 'Колода'
+        block: 'Колода'
+        review_date: 'Дата просмотра'
+        created_at: 'Дата создания'
+        updated_at: 'Дата обновления'
       block:
         title: 'Название'
+        created_at: 'Дата создания'
+        updated_at: 'Дата обновления'
+        user: 'Пользователь'
       user:
         email: 'E-mail'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
         locale: 'Локаль'
-        created_at: 'Дата создания'
-        updated_at: 'Дата обновления'
         cards: 'Карты'
         blocks: 'Колоды'
+        created_at: 'Дата создания'
+        updated_at: 'Дата обновления'
+      role:
+        created_at: 'Дата создания'
+        updated_at: 'Дата обновления'
     errors:
       models:
         card:

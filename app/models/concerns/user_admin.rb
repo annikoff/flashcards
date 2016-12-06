@@ -11,14 +11,13 @@ module UserAdmin
         include_fields :email, :created_at, :updated_at
       end
       show do
-        include_fields :email, :created_at, :updated_at
+        include_fields :email
       end
       export do
         include_fields :email, :created_at, :updated_at
       end
       edit do
-        include_fields :email, :current_block_id,
-                       :password, :password_confirmation,
+        include_fields :email, :password, :password_confirmation,
                        :cards, :blocks
       end
     end

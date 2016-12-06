@@ -23,17 +23,13 @@ RailsAdmin.config do |config|
     index                         # mandatory
     new
     export
-    bulk_delete
     show
     edit
     delete
-    show_in_app do
-      except ['User']
-    end
 
     ## With an audit adapter, you can add:
     # history_index
     # history_show
   end
-  config.included_models = ['User', 'Block', 'Card']
+  config.excluded_models = ['Authentication']
 end
