@@ -36,7 +36,10 @@ gem 'responders'
 gem 'rollbar'
 gem 'routing-filter'
 gem 'rails_admin', '~> 1.0'
+gem 'rails_admin-i18n'
 gem 'rolify'
+gem 'pundit'
+gem 'rails_admin_pundit', github: 'sudosu/rails_admin_pundit'
 
 group :development, :test do
   gem 'capybara'

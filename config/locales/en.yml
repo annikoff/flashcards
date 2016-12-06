@@ -34,6 +34,7 @@ en:
       translation_from_misprint: 'You entered translation from misprint.
         User translation: %{user_translation} / Original text: %{original_text} /
         Translated text: %{translated_text}. Please try again.'
+      not_authorized: 'You are not authorized to perform this action.'
 
   cards_mailer:
     pending_cards_notification:

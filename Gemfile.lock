@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/sudosu/rails_admin_pundit.git
+  revision: 2b793c1d83cdfe2385e1e23254ee2dde4503009b
+  specs:
+    rails_admin_pundit (0.0.1)
+      pundit (>= 0.2.3)
+      rails_admin (>= 0.6.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -160,6 +168,8 @@ GEM
     powerpack (0.1.1)
     public_suffix (2.0.4)
     puma (3.6.2)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.1)
     rack-pjax (1.0.0)
       nokogiri (~> 1.5)
@@ -199,6 +209,7 @@ GEM
       rails (>= 4.0, < 6)
       remotipart (~> 1.3)
       sass-rails (>= 4.0, < 6)
+    rails_admin-i18n (1.11.0)
     rails_serve_static_assets (0.0.5)
     rails_stdout_logging (0.0.5)
     railties (5.0.0.1)
@@ -311,9 +322,12 @@ DEPENDENCIES
   nokogiri
   pg
   puma
+  pundit
   rails (= 5.0.0.1)
   rails_12factor
   rails_admin (~> 1.0)
+  rails_admin-i18n
+  rails_admin_pundit!
   rake
   responders
   rolify

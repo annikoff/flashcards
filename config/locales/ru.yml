@@ -34,6 +34,7 @@ ru:
       translation_from_misprint: 'Вы ввели перевод c опечаткой.
         Ваш вариант: %{user_translation} / Оригинал: %{original_text} /
         Перевод: %{translated_text}. Продолжайте.'
+      not_authorized: 'У вас нет прав для этого действия.'
 
   cards_mailer:
     pending_cards_notification:
