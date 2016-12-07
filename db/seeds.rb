@@ -8,6 +8,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+exit if Rails.env.production?
+
 require 'nokogiri'
 require 'open-uri'
 
@@ -15,8 +17,6 @@ admin = User.create(email: 'admin@example.com',
                     password: 'admin',
                     password_confirmation: 'admin')
 admin.add_role :admin
-
-exit if Rails.env.production?
 
 user = User.create(email: 'user1@example.com',
                    password: '12345',
