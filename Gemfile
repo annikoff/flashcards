@@ -35,6 +35,7 @@ gem 'whenever', require: false
 gem 'responders'
 gem 'rollbar'
 gem 'routing-filter'
+gem 'flickraw'
 
 group :development, :test do
   gem 'capybara'
@@ -44,6 +45,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'database_cleaner'
+  gem 'webmock'
 end
 
 group :test do
