@@ -35,6 +35,7 @@ gem 'whenever', require: false
 gem 'responders'
 gem 'rollbar'
 gem 'routing-filter'
+gem 'flickraw'
 gem 'rails_admin', '~> 1.0'
 gem 'rails_admin-i18n'
 gem 'rolify'
@@ -49,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'database_cleaner'
+  gem 'webmock'
 end
 
 group :test do
