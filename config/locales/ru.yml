@@ -55,6 +55,7 @@ ru:
         heading: 'Все колоды'
         set_as_common: 'Сделать обычной'
         set_as_current: 'Сделать текущей'
+        title: 'Название'
       new:
         heading: 'Добавить колоду'
       edit:

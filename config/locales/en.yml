@@ -55,6 +55,7 @@ en:
         heading: 'All decks'
         set_as_common: 'Set as a common'
         set_as_current: 'Set as a current'
+        title: 'Title'
       new:
         heading: 'Add deck'
       edit:
