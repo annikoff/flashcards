@@ -15,6 +15,7 @@ ru:
       log_out: 'Выйти'
       edit_profile: 'Редактировать профиль'
       delete_user: 'Удалить пользователя'
+      download_from_flickr: 'Загрузить с Flickr'
     confirmations:
       deletion: 'Подтвердите удаление'
     notices:
@@ -117,3 +118,4 @@ ru:
         confirmation: 'Значения не совпадают.'
         taken: 'Не уникальное значение.'
         invalid: 'Не верный формат.'
+        record_invalid: 'Некорректная запись'

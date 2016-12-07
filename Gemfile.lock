@@ -56,6 +56,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.1.0)
+      capybara (~> 2.0, >= 2.0.2)
+      json
     carrierwave (0.11.2)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -73,6 +76,7 @@ GEM
       execjs
     coffee-script-source (1.11.1)
     concurrent-ruby (1.0.2)
+    database_cleaner (1.5.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
     erubis (2.7.0)
@@ -105,6 +109,7 @@ GEM
     formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    headless (2.3.1)
     http_accept_language (2.1.0)
     i18n (0.7.0)
     ipaddress (0.8.3)
@@ -267,13 +272,16 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.3.7)
   capybara
+  capybara-webkit
   carrierwave
   codeclimate-test-reporter (~> 1.0.0)
   coffee-rails (~> 4.2.1)
+  database_cleaner
   factory_girl_rails
   faraday
   figaro
   fog-aws
+  headless
   http_accept_language
   jbuilder (~> 2.6.1)
   jquery-rails

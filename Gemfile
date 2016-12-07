@@ -38,9 +38,12 @@ gem 'routing-filter'
 
 group :development, :test do
   gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'headless'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'database_cleaner'
 end
 
 group :test do
