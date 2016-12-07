@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/sudosu/rails_admin_pundit.git
+  remote: https://github.com/sudosu/rails_admin_pundit.git
   revision: 2b793c1d83cdfe2385e1e23254ee2dde4503009b
   specs:
     rails_admin_pundit (0.0.1)
