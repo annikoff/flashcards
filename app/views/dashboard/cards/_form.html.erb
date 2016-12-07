@@ -14,6 +14,9 @@
   <div class="form-group">
     <%= f.input :image, as: :file %>
     <%= f.input :image_cache, as: :hidden %>
+    <div>
+      <%= link_to t('global.actions.download_from_flickr') %>
+    </div>
   </div>
 
   <div class="form-group">

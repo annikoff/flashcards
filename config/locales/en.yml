@@ -15,6 +15,7 @@ en:
       log_out: 'Log out'
       edit_profile: 'Edit profile'
       delete_user: 'Delete user'
+      download_from_flickr: 'Download from Flickr'
     confirmations:
       deletion: 'Confirm deletion'
     notices:

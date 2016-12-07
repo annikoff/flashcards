@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 require 'simplecov'
 SimpleCov.start
-require 'capybara/rspec'
 require 'factory_girl_rails'
+require 'support/capybara'
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
