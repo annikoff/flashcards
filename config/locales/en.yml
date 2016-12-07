@@ -16,6 +16,7 @@ en:
       edit_profile: 'Edit profile'
       delete_user: 'Delete user'
       download_from_flickr: 'Download from Flickr'
+      find_on_flickr: 'Find on Flickr'
     confirmations:
       deletion: 'Confirm deletion'
     notices:
