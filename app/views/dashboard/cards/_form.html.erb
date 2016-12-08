@@ -21,17 +21,20 @@
     <div>
         <%= link_to t('global.actions.download_from_flickr'),
                     nil, id: 'download-from-flickr' %>
-      <div class="row">
-        <div class="flickr-box col-sm-6">
+      <div class="row flickr-box">
+        <div class="col-sm-6">
           <div class="input-group">
             <input type="text" class="form-control" name="flickr_search">
             <span class="input-group-btn">
               <button class="btn btn-secondary" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+                <span class="glyphicon glyphicon-refresh glyphicon-spin"></span>
                 <%= t('global.actions.find_on_flickr') %>
               </button>
             </span>
           </div>
         </div>
+        <div class="images col-sm-12"></div>
       </div>
     </div>
   </div>

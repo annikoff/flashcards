@@ -1,0 +1,33 @@
+.flickr-box {
+  display: none;
+
+  .glyphicon-refresh {
+    display: none;
+  }
+
+  .images {
+    margin-top: 10px;
+
+    .thumbnail {
+      display: inline-block;
+      margin-right: 4px;
+
+      img {
+        max-height: 50px;
+      }
+    }
+  }
+}
+
+.glyphicon-spin {
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}

@@ -34,4 +34,12 @@ Rails.application.routes.draw do
     get 'profile/:id/edit' => 'profile#edit', as: :edit_profile
     put 'profile/:id' => 'profile#update', as: :profile
   end
+
+  scope module: 'external' do
+    resources :flickr, only: :photos_search do
+      collection do
+        get :photos_search
+      end
+    end
+  end
 end
