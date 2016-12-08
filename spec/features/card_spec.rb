@@ -22,5 +22,7 @@ describe 'when user creates card', type: :feature, js: true do
     click_link I18n.t('global.actions.download_from_flickr')
     fill_in 'flickr_search', with: 'cats'
     click_button I18n.t('global.actions.find_on_flickr')
+    wait_for_ajax
+    expect(page).to have_css('.thumbnail', :count => 10)
   end
 end
