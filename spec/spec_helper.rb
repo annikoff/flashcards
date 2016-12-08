@@ -11,7 +11,8 @@ RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
+
   config.before(:each) do
-    stub_request(:any, /api.github.com/).to_rack(FakeFlickr)
+    stub_request(:any, /flickr.com/).to_rack(FakeFlickr)
   end
 end
