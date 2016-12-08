@@ -14,7 +14,13 @@ describe 'when user creates card', type: :feature, js: true do
 
   it 'clicks to download link' do
     click_link I18n.t('global.actions.download_from_flickr')
-    expect(page).to have_selector 'input[name="flickr_search"]'
+    expect(page).to have_field 'flickr_search'
     expect(page).to have_button I18n.t('global.actions.find_on_flickr')
+  end
+
+  it 'finds Flickr images by search query' do
+    click_link I18n.t('global.actions.download_from_flickr')
+    fill_in 'flickr_search', with: 'cats'
+    click_button I18n.t('global.actions.find_on_flickr')
   end
 end
