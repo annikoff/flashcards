@@ -46,6 +46,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'database_cleaner'
   gem 'webmock'
+  gem 'sinatra', '~> 2.0.0.beta2'
 end
 
 group :test do
