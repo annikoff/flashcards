@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 module External
   class FlickrController < ApplicationController
-    #before_action :require_login
     rescue_from StandardError do |exception|
-      p exception
       render json: { error: exception }, status: 500
     end
 
