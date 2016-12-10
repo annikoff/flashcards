@@ -45,7 +45,6 @@ gem 'rails_admin_pundit', git: 'https://github.com/sudosu/rails_admin_pundit.git
 group :development, :test do
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'headless'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'rubocop'
