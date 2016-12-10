@@ -56,7 +56,7 @@ $(document).ready(function () {
             });
             bindThumbnails(flickr_box, card_remote_image_url);
         }).fail(function (xhr) {
-            alert(xhr.responseJSON.error);
+            console.log(xhr.responseJSON.error);
         }).always(function () {
             button.attr({ 'disabled': false });
             input.attr({ 'disabled': false });
