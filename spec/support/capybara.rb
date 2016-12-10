@@ -5,4 +5,5 @@ require 'capybara-webkit'
 Capybara.javascript_driver = :webkit
 Capybara::Webkit.configure do |config|
   config.allow_url('farm1.staticflickr.com')
+  config.debug = true
 end
