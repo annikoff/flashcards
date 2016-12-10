@@ -16,6 +16,14 @@
         max-height: 50px;
       }
     }
+
+    .thumbnail.selected {
+      border: 1px solid #337ab7;
+
+      img {
+        max-height: 80px;
+      }
+    }
   }
 }
 

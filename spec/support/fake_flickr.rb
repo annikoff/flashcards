@@ -6,7 +6,7 @@ class FakeFlickr < Sinatra::Base
     json_response 200, "#{params['method']}.#{params['format']}"
   end
 
-  get %r{/\.*\/\.jpg/} do
+  get /.*\.jpg/ do
     send_file File.expand_path('cat.jpg', RSpec.configuration.fixture_path)
   end
 

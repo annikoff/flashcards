@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start do
+  add_filter '/spec/'
+  add_filter '/config/'
+  add_filter '/db/'
+end
 require 'factory_girl_rails'
 require 'support/capybara'
 require 'webmock/rspec'
