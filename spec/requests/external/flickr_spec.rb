@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe External::FlickrController, type: :request do
+describe 'External::Flickr' do
   describe 'photos_search' do
     it 'returns an array of found photos' do
       get photos_search_flickr_index_path,

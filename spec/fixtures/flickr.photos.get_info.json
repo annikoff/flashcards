@@ -13,8 +13,8 @@
     "originalformat": "jpg",
     "owner": {
       "nsid": "145500638@N03",
-      "username": "kondrattankov",
-      "realname": "Kondrat Tankov",
+      "username": "username",
+      "realname": "User Name",
       "location": "",
       "iconserver": 0,
       "iconfarm": 0,
@@ -72,7 +72,7 @@
         {
           "id": "145477584-31420571091-1344",
           "author": "145500638@N03",
-          "authorname": "kondrattankov",
+          "authorname": "author",
           "raw": "cat",
           "_content": "cat",
           "machine_tag": ""
