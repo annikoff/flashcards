@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class DeleteQualityFromCards < ActiveRecord::Migration
+class DeleteQualityFromCards < ActiveRecord::Migration[5.0]
   def change
     remove_column :cards, :quality
   end
