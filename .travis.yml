@@ -30,4 +30,4 @@ before_install:
   - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1024x768x16
 install: bundle install --jobs=3 --retry=3
 after_success: bundle exec codeclimate-test-reporter
-script: bundle exec rspec
+script: xvfb-run --server-args="-screen 0 1024x768x24" bundle exec rspec
