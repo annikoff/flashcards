@@ -3,7 +3,6 @@ require 'rails_helper'
 
 describe 'when user creates card', js: true do
   before do
-    page.driver.resize_window 1024, 768
     user = create(:user_with_one_block_and_one_card)
     @card = user.cards.first
     visit edit_card_path id: @card.id
