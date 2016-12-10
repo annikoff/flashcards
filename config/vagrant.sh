@@ -38,9 +38,13 @@ sudo yum -y install nodejs
 cd /vagrant
 cp config/database.yml.example config/database.yml
 
+# Install QT5
+sudo yum -y install qt5-qtwebkit-devel
+
 # Install gems
 gem install bundler
 gem install pg -- --with-pg-config=/usr/pgsql-9.5/bin/pg_config
+QMAKE=/usr/lib64/qt5/bin/qmake gem install capybara-webkit
 bundle install
 
 # Run migrations and seeds
