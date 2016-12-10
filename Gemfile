@@ -35,6 +35,11 @@ gem 'whenever', require: false
 gem 'responders'
 gem 'rollbar'
 gem 'routing-filter'
+gem 'rails_admin', '~> 1.0'
+gem 'rails_admin-i18n'
+gem 'rolify'
+gem 'pundit'
+gem 'rails_admin_pundit', git: 'https://github.com/sudosu/rails_admin_pundit.git'
 
 group :development, :test do
   gem 'capybara'

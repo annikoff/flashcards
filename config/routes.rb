@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  filter :locale
+  filter :locale, exclude: %r{^\/admin}
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   root 'main#index'
 
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   scope module: 'dashboard' do
     resources :user_sessions, only: :destroy
     resources :users, only: :destroy
-    post 'logout' => 'user_sessions#destroy', :as => :logout
+    delete 'logout' => 'user_sessions#destroy', :as => :logout
 
     resources :cards
 

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-class User < ActiveRecord::Base
+class User < ApplicationRecord
+  rolify
   has_many :cards, dependent: :destroy
   has_many :blocks, dependent: :destroy
   has_many :authentications, dependent: :destroy
@@ -8,6 +9,7 @@ class User < ActiveRecord::Base
   before_validation :set_default_locale, on: :create
 
   accepts_nested_attributes_for :authentications
+  include UserAdmin
 
   authenticates_with_sorcery! do |config|
     config.authentications_class = Authentication

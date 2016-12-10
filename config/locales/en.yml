@@ -34,6 +34,7 @@ en:
       translation_from_misprint: 'You entered translation from misprint.
         User translation: %{user_translation} / Original text: %{original_text} /
         Translated text: %{translated_text}. Please try again.'
+      not_authorized: 'You are not authorized to perform this action.'
 
   cards_mailer:
     pending_cards_notification:
@@ -82,22 +83,46 @@ en:
 
   activerecord:
     models:
-      card: 'Deck'
-      block: 'Колода'
-      user: 'User'
+      card:
+        one: 'Card'
+        other: 'Cards'
+      block:
+        one: 'Deck'
+        other: 'Decks'
+      user:
+        one: 'User'
+        other: 'Users'
+      role:
+        one: 'Role'
+        other: 'Roles'
     attributes:
       card:
         original_text: 'Original'
         translated_text: 'Translation'
         image: 'Image'
-        block_id: 'Deck'
+        block: 'Deck'
+        review_date: 'Review date'
+        created_at: 'Сreated date'
+        updated_at: 'Updated date'
       block:
         title: 'Title'
+        user: 'User'
+        created_at: 'Сreated date'
+        updated_at: 'Updated date'
       user:
         email: 'E-mail'
         password: 'Password'
         password_confirmation: 'Password confirmation'
         locale: 'Locale'
+        cards: 'Cards'
+        blocks: 'Decks'
+        created_at: 'Сreated date'
+        updated_at: 'Updated date'
+      role:
+        name: 'Name'
+        users: 'Users'
+        created_at: 'Сreated date'
+        updated_at: 'Updated date'
     errors:
       models:
         card:

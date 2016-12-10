@@ -29,7 +29,7 @@
                           data: {
                               confirm: t('global.confirmations.deletion')
                           } %> |
-              <%= link_to t('global.actions.log_out'), :logout, method: :post,
+              <%= link_to t('global.actions.log_out'), :logout, method: :delete,
                           class: 'navbar-link' %>
             <% else %>
               <%= link_to t('global.actions.sing_up'), new_user_path,
