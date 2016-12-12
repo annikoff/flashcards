@@ -22,21 +22,19 @@
                 input_html: { class: 'form-control', required: true } %>
   </div>
 
-  <div class="form-group image-box">
+  <div class="form-group">
     <%= f.input :image, as: :file %>
     <%= f.input :image_cache, as: :hidden %>
     <div>
       <%= link_to t('global.actions.download_from_flickr'),
                   nil, id: 'flickr-anchor' %>
-      <div class="row flickr-box">
+      <div id="flickr-box" class="row">
         <%= f.input :remote_image_url, as: :hidden %>
         <div class="col-sm-6">
           <div class="input-group">
             <input type="text" class="form-control" name="flickr_search">
             <span class="input-group-btn">
               <button class="btn btn-secondary" type="button">
-                <span class="glyphicon glyphicon-search"></span>
-                <span class="glyphicon glyphicon-refresh glyphicon-spin"></span>
                 <%= t('global.actions.find_on_flickr') %>
               </button>
             </span>
@@ -59,7 +57,6 @@
       </div>
     </div>
   <% end %>
-    <img src="https://farm1.staticflickr.com/653/31420571091_8bc137eb9c_m.jpg" alt="">
 
   <%= f.button :submit, t('global.actions.save'), class: 'btn btn-default' %>
 <% end %>
