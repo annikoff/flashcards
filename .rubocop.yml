@@ -34,3 +34,6 @@ Metrics/BlockLength:
 
 Bundler/OrderedGems:
   Enabled: false
+
+Lint/AmbiguousRegexpLiteral:
+   Enabled: false

@@ -1,3 +1,7 @@
+<%= content_for :head do %>
+    <%= stylesheet_link_tag 'flickr_downloader' %>
+    <%= javascript_include_tag 'flickr_downloader' %>
+<% end %>
 <%= simple_form_for card do |f| %>
   <div class="form-group">
     <%= f.input :original_text, as: :text,
@@ -11,15 +15,34 @@
                 input_html: { class: 'form-control', required: true } %>
   </div>
 
-  <div class="form-group">
-    <%= f.input :image, as: :file %>
-    <%= f.input :image_cache, as: :hidden %>
-  </div>
 
   <div class="form-group">
     <%= f.input :block_id, collection: blocks,
-                      prompt: t('global.promts.choose'),
-                      input_html: { class: 'form-control', required: true } %>
+                prompt: t('global.promts.choose'),
+                input_html: { class: 'form-control', required: true } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :image, as: :file %>
+    <%= f.input :image_cache, as: :hidden %>
+    <div>
+      <%= link_to t('global.actions.download_from_flickr'),
+                  nil, id: 'flickr-anchor' %>
+      <div id="flickr-box" class="row">
+        <%= f.input :remote_image_url, as: :hidden %>
+        <div class="col-sm-6">
+          <div class="input-group">
+            <input type="text" class="form-control" name="flickr_search">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">
+                <%= t('global.actions.find_on_flickr') %>
+              </button>
+            </span>
+          </div>
+        </div>
+        <div class="images col-sm-12"></div>
+      </div>
+    </div>
   </div>
 
   <% if card.image? %>

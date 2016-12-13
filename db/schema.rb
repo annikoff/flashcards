@@ -19,15 +19,15 @@ ActiveRecord::Schema.define(version: 20161206161443) do
     t.integer  "user_id",    null: false
     t.string   "provider",   null: false
     t.string   "uid",        null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
   end
 
   create_table "blocks", force: :cascade do |t|
     t.string   "title",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id",    null: false
   end
 
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20161206161443) do
     t.text     "original_text"
     t.text     "translated_text"
     t.datetime "review_date",                   null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "user_id",                       null: false
     t.string   "image"
     t.integer  "block_id",                      null: false
@@ -51,17 +51,18 @@ ActiveRecord::Schema.define(version: 20161206161443) do
     t.string   "name"
     t.string   "resource_type"
     t.integer  "resource_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
     t.index ["name"], name: "index_roles_on_name", using: :btree
+    t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "crypted_password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "salt"
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
@@ -78,7 +79,9 @@ ActiveRecord::Schema.define(version: 20161206161443) do
   create_table "users_roles", id: false, force: :cascade do |t|
     t.integer "user_id"
     t.integer "role_id"
+    t.index ["role_id"], name: "index_users_roles_on_role_id", using: :btree
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+    t.index ["user_id"], name: "index_users_roles_on_user_id", using: :btree
   end
 
 end

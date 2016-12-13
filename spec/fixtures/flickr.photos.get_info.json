@@ -1,0 +1,93 @@
+{
+  "photo": {
+    "id": "31420571091",
+    "secret": "8bc137eb9c",
+    "server": "653",
+    "farm": 1,
+    "dateuploaded": "1481315228",
+    "isfavorite": 0,
+    "license": 0,
+    "safety_level": 0,
+    "rotation": 0,
+    "originalsecret": "5988288950",
+    "originalformat": "jpg",
+    "owner": {
+      "nsid": "145500638@N03",
+      "username": "username",
+      "realname": "User Name",
+      "location": "",
+      "iconserver": 0,
+      "iconfarm": 0,
+      "path_alias": ""
+    },
+    "title": {
+      "_content": "My serious cat"
+    },
+    "description": {
+      "_content": ""
+    },
+    "visibility": {
+      "ispublic": 1,
+      "isfriend": 0,
+      "isfamily": 0
+    },
+    "dates": {
+      "posted": "1481315228",
+      "taken": "2016-12-09 12:25:13",
+      "takengranularity": 0,
+      "takenunknown": 1,
+      "lastupdate": "1481315341"
+    },
+    "permissions": {
+      "permcomment": 3,
+      "permaddmeta": 2
+    },
+    "views": 0,
+    "editability": {
+      "cancomment": 1,
+      "canaddmeta": 1
+    },
+    "publiceditability": {
+      "cancomment": 1,
+      "canaddmeta": 0
+    },
+    "usage": {
+      "candownload": 1,
+      "canblog": 1,
+      "canprint": 1,
+      "canshare": 1
+    },
+    "comments": {
+      "_content": 0
+    },
+    "notes": {
+      "note": [
+      ]
+    },
+    "people": {
+      "haspeople": 0
+    },
+    "tags": {
+      "tag": [
+        {
+          "id": "145477584-31420571091-1344",
+          "author": "145500638@N03",
+          "authorname": "author",
+          "raw": "cat",
+          "_content": "cat",
+          "machine_tag": ""
+        }
+      ]
+    },
+    "urls": {
+      "url": [
+        {
+          "type": "photopage",
+          "_content": "https:\/\/www.flickr.com\/photos\/145500638@N03\/31420571091\/"
+        }
+      ]
+    },
+    "media": "photo"
+  },
+  "stat": "ok"
+}

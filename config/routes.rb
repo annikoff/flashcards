@@ -35,4 +35,6 @@ Rails.application.routes.draw do
     get 'profile/:id/edit' => 'profile#edit', as: :edit_profile
     put 'profile/:id' => 'profile#update', as: :profile
   end
+
+  resources :flickr_search, only: [:index]
 end

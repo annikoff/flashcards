@@ -15,6 +15,8 @@ ru:
       log_out: 'Выйти'
       edit_profile: 'Редактировать профиль'
       delete_user: 'Удалить пользователя'
+      download_from_flickr: 'Загрузить с Flickr'
+      find_on_flickr: 'Найти во Flickr'
     confirmations:
       deletion: 'Подтвердите удаление'
     notices:
@@ -56,6 +58,7 @@ ru:
         heading: 'Все колоды'
         set_as_common: 'Сделать обычной'
         set_as_current: 'Сделать текущей'
+        title: 'Название'
       new:
         heading: 'Добавить колоду'
       edit:
@@ -142,3 +145,4 @@ ru:
         confirmation: 'Значения не совпадают.'
         taken: 'Не уникальное значение.'
         invalid: 'Не верный формат.'
+        record_invalid: 'Некорректная запись'

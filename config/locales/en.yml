@@ -15,6 +15,8 @@ en:
       log_out: 'Log out'
       edit_profile: 'Edit profile'
       delete_user: 'Delete user'
+      download_from_flickr: 'Download from Flickr'
+      find_on_flickr: 'Find on Flickr'
     confirmations:
       deletion: 'Confirm deletion'
     notices:
@@ -56,6 +58,7 @@ en:
         heading: 'All decks'
         set_as_common: 'Set as a common'
         set_as_current: 'Set as a current'
+        title: 'Title'
       new:
         heading: 'Add deck'
       edit:

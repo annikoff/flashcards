@@ -1,0 +1,16 @@
+.flickr-box {
+  display: none;
+
+  .images {
+    margin-top: 10px;
+
+    .thumbnail {
+      display: inline-block;
+      margin-right: 4px;
+
+      img {
+        max-height: 50px;
+      }
+    }
+  }
+}
