@@ -17,6 +17,7 @@ ru:
       delete_user: 'Удалить пользователя'
       download_from_flickr: 'Загрузить с Flickr'
       find_on_flickr: 'Найти во Flickr'
+      parse: 'Парсить'
     confirmations:
       deletion: 'Подтвердите удаление'
     notices:
@@ -71,6 +72,15 @@ ru:
         heading: 'Текущая карточка'
         no_cards_to_review: 'Вы изучили все доступные карточки.
           Ожидайте наступления даты пересмотра.'
+    parsing:
+      index:
+        heading: ''
+      new:
+        heading: 'Новый парсинг'
+        url: 'URL'
+        block_id: 'Колода'
+        original_text_selector: 'Селектор оригинального текста'
+        translated_text_selector: 'Селектор перевода'
 
   home:
     user_sessions:

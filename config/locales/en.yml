@@ -17,6 +17,7 @@ en:
       delete_user: 'Delete user'
       download_from_flickr: 'Download from Flickr'
       find_on_flickr: 'Find on Flickr'
+      parse: 'Parse'
     confirmations:
       deletion: 'Confirm deletion'
     notices:
@@ -71,6 +72,15 @@ en:
         heading: 'Current card'
         no_cards_to_review: 'You have studied all available cards.
           Expect the date of revision.'
+    parsing:
+      index:
+        heading: ''
+      new:
+        heading: 'New parsing'
+        url: 'URL'
+        block_id: 'Deck'
+        original_text_selector: 'Original text selector'
+        translated_text_selector: 'Translated text selector'
 
   home:
     user_sessions:

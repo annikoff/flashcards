@@ -18,5 +18,6 @@ RSpec.configure do |config|
 
   config.before(:each) do
     stub_request(:any, /flickr.com/).to_rack(FakeFlickr.new)
+    stub_request(:any, /example.com/).to_rack(FakeExample.new)
   end
 end
