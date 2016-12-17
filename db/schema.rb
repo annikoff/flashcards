@@ -62,22 +62,6 @@ ActiveRecord::Schema.define(version: 20161217093520) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
   end
 
-  create_table "parsing_cards", id: false, force: :cascade do |t|
-    t.integer "parsing_id", null: false
-    t.integer "card_id",    null: false
-  end
-
-  create_table "parsings", force: :cascade do |t|
-    t.string   "url",                      null: false
-    t.string   "original_text_selector",   null: false
-    t.string   "translated_text_selector", null: false
-    t.integer  "user_id",                  null: false
-    t.integer  "block_id",                 null: false
-    t.string   "error"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
   create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.string   "resource_type"

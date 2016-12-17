@@ -17,6 +17,7 @@ ru:
       delete_user: 'Удалить пользователя'
       download_from_flickr: 'Загрузить с Flickr'
       find_on_flickr: 'Найти во Flickr'
+      parse: 'Парсить'
     confirmations:
       deletion: 'Подтвердите удаление'
     notices:
@@ -41,7 +42,10 @@ ru:
 
   cards_mailer:
     pending_cards_notification:
+      heading: 'Наступила дата пересмотра карточек.'
       go_to_website: 'Перейти на сайт для просмотра карточек'
+    cards_created_by_parsing:
+      heading: 'Парсинг закончен'
 
   dashboard:
     cards:
@@ -73,17 +77,12 @@ ru:
         no_cards_to_review: 'Вы изучили все доступные карточки.
           Ожидайте наступления даты пересмотра.'
     parsings:
-      index:
-        heading: 'Все парсинги'
-        url: 'URL'
-        original_text_selector: 'Селектор оригинального текста'
-        translated_text_selector: 'Селектор перевода'
-        cards_count: 'Кол-во карточек'
-        error: 'Ошибка'
       new:
         heading: 'Новый парсинг'
-      cards:
-        heading: 'Карточки созданные при парсинге'
+        url: 'URL'
+        original_text_selector: 'Селектор для оригинала'
+        translated_text_selector: 'Селектор для перевода'
+        block_id: 'Колода'
 
   home:
     user_sessions:
@@ -111,9 +110,6 @@ ru:
       role:
         one: 'Роль'
         other: 'Роли'
-      parsing:
-        one: 'Парсинг'
-        other: 'Парсинги'
     attributes:
       card:
         original_text: 'Оригинал'
@@ -143,11 +139,6 @@ ru:
         users: 'Пользователи'
         created_at: 'Дата создания'
         updated_at: 'Дата обновления'
-      parsing:
-        url: 'URL'
-        original_text_selector: 'Селектор для оригинала'
-        translated_text_selector: 'Селектор для перевода'
-        block_id: 'Колода'
     errors:
       models:
         card:

@@ -17,6 +17,7 @@ en:
       delete_user: 'Delete user'
       download_from_flickr: 'Download from Flickr'
       find_on_flickr: 'Find on Flickr'
+      parse: 'Parse'
     confirmations:
       deletion: 'Confirm deletion'
     notices:
@@ -41,7 +42,10 @@ en:
 
   cards_mailer:
     pending_cards_notification:
+      heading: 'Today is a date to review your cards'
       go_to_website: 'Go to website to look at cards'
+    cards_created_by_parsing:
+      heading: 'Parsing is done'
 
   dashboard:
     cards:
@@ -73,17 +77,12 @@ en:
         no_cards_to_review: 'You have studied all available cards.
           Expect the date of revision.'
     parsings:
-      index:
-        heading: 'All parsings'
+      new:
+        heading: 'Parsing'
         url: 'URL'
+        block_id: 'Deck'
         original_text_selector: 'Original text selector'
         translated_text_selector: 'Translated text selector'
-        cards_count: 'Cards count'
-        error: 'Error'
-      new:
-        heading: 'New parsing'
-      cards:
-        heading: 'Cards created by parsing'
 
   home:
     user_sessions:
@@ -111,9 +110,6 @@ en:
       role:
         one: 'Role'
         other: 'Roles'
-      parsing:
-        one: 'Parsing'
-        other: 'Parsings'
     attributes:
       card:
         original_text: 'Original'
@@ -142,12 +138,6 @@ en:
         users: 'Users'
         created_at: 'Сreated date'
         updated_at: 'Updated date'
-      parsing:
-        url: 'URL'
-        original_text_selector: 'Original selector'
-        translated_text_selector: 'Translation selector'
-        user: 'User'
-        block: 'Deck'
     errors:
       models:
         card:

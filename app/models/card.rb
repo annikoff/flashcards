@@ -4,7 +4,6 @@ require 'super_memo'
 class Card < ApplicationRecord
   belongs_to :user
   belongs_to :block
-  has_one :parsing_card, dependent: :destroy
   before_validation :set_review_date_as_now, on: :create
   validate :texts_are_not_equal
   validates :original_text, :translated_text, :review_date, presence: true

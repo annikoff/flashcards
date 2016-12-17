@@ -21,9 +21,7 @@ Rails.application.routes.draw do
     delete 'logout' => 'user_sessions#destroy', :as => :logout
 
     resources :cards
-    resources :parsings, only: [:index, :new, :create, :destroy, :cards] do
-      get :cards, on: :member
-    end
+    resources :parsings, only: [:new, :create]
 
     resources :blocks do
       member do
