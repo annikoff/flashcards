@@ -15,8 +15,7 @@ describe 'parsings' do
     it 'sees all parsings' do
       parsing.parse!
       visit parsings_path
-      p page.html
-      expect(page).to have_css('table.table tr > td', count: 1)
+      expect(page).to have_css('table.table tbody tr', count: 1)
     end
   end
 
@@ -34,6 +33,16 @@ describe 'parsings' do
       click_button I18n.t('global.actions.save')
       expect(page).to have_content I18n.t('global.notices.parsing_is_running')
       expect(Delayed::Job.count).to eq(1)
+    end
+  end
+
+  describe 'when parsing is done'  do
+    let(:parsing) { create(:parsing, user: @user, block: @block) }
+
+    it 'sees cards created by parsing' do
+      parsing.parse!
+      visit cards_parsing_path(parsing)
+      expect(page).to have_css('table.table tbody tr', count: 70)
     end
   end
 end

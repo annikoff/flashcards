@@ -47,9 +47,9 @@ ru:
     cards:
       index:
         heading: 'Все карточки'
-        original_text_label: 'Оригинал'
-        translated_text_label: 'Перевод'
-        review_label: 'Пересмотр'
+        original_text: 'Оригинал'
+        translated_text: 'Перевод'
+        review: 'Пересмотр'
       new:
         heading: 'Добавить карточку'
       edit:
@@ -82,6 +82,8 @@ ru:
         error: 'Ошибка'
       new:
         heading: 'Новый парсинг'
+      cards:
+        heading: 'Карточки созданные при парсинге'
 
   home:
     user_sessions:

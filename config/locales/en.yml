@@ -47,9 +47,9 @@ en:
     cards:
       index:
         heading: 'All cards'
-        original_text_label: 'Original'
-        translated_text_label: 'Translation'
-        review_label: 'Review'
+        original_text: 'Original'
+        translated_text: 'Translation'
+        review: 'Review'
       new:
         heading: 'Add card'
       edit:
@@ -82,6 +82,8 @@ en:
         error: 'Error'
       new:
         heading: 'New parsing'
+      cards:
+        heading: 'Cards created by parsing'
 
   home:
     user_sessions:

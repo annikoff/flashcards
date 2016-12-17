@@ -20,7 +20,7 @@ module Flashcards
     #   ]
     # @return [Array]
     def parse
-      page = Nokogiri::HTML open(url)
+      page = Nokogiri::HTML open(url).read.force_encoding('UTF-8')
       original_texts = page.css(original_text_selector).map(&:text)
       translated_texts = page.css(translated_text_selector).map(&:text)
       original_texts.map.with_index do |original_text, index|
