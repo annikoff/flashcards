@@ -19,7 +19,7 @@ describe Card do
     card = Card.create(original_text: '', translated_text: '', user_id: 1,
                        block_id: 1)
     expect(card.errors[:original_text])
-      .to include('Вводимые значения должны отличаться.')
+      .to include('Заполните поле.')
   end
 
   it 'equal_texts Eng' do
