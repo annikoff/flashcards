@@ -1,19 +1,39 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe 'when user creates parsing' do
-  before do
+describe 'parsings' do
+  before(:each) do
     @user = create(:user_with_one_block_without_cards)
-    visit new_parsing_path
+    @block = @user.blocks.first
+    visit root_path
     login('test@test.com', '12345')
   end
 
-  it 'fills in form' do
-    block = @user.blocks.first
-    fill_in 'url', with: 'http://example.com/'
-    select block.title, from: 'block_id'
-    fill_in 'original_text_selector', with: '.original_text'
-    fill_in 'translated_text_selector', with: '.translated_text'
-    click_button I18n.t('global.actions.parse')
+  describe 'when visit index path' do
+    let(:parsing) { create(:parsing, user: @user, block: @block) }
+
+    it 'sees all parsings' do
+      parsing.parse!
+      visit parsings_path
+      p page.html
+      expect(page).to have_css('table.table tr > td', count: 1)
+    end
+  end
+
+  describe 'when visit new parsing path' do
+    let(:parsing) { build(:parsing, user: @user, block: @block) }
+
+    it 'creates new parsing' do
+      visit new_parsing_path
+      fill_in 'parsing[url]', with: parsing.url
+      select @block.title, from: 'parsing[block_id]'
+      fill_in 'parsing[original_text_selector]',
+              with: parsing.original_text_selector
+      fill_in 'parsing[translated_text_selector]',
+              with: parsing.translated_text_selector
+      click_button I18n.t('global.actions.save')
+      expect(page).to have_content I18n.t('global.notices.parsing_is_running')
+      expect(Delayed::Job.count).to eq(1)
+    end
   end
 end

@@ -41,8 +41,8 @@ gem 'rails_admin-i18n'
 gem 'rolify'
 gem 'pundit'
 gem 'rails_admin_pundit', git: 'https://github.com/sudosu/rails_admin_pundit.git'
-gem 'delayed_job'
 gem 'delayed_job_active_record'
+gem 'daemons'
 
 group :development, :test do
   gem 'capybara'

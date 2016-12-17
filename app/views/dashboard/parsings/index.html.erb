@@ -1,0 +1,27 @@
+<h2><%= t('.heading') %></h2>
+
+<table class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th><%= t('.url') %></th>
+      <th><%= t('.original_text_selector') %></th>
+      <th><%= t('.translated_text_selector') %></th>
+      <th><%= t('.cards_count') %></th>
+      <th><%= t('.error') %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @parsings.each do |parsing| %>
+      <tr>
+        <td><%= link_to parsing.url, parsing.url %></td>
+        <td><%= parsing.original_text_selector %></td>
+        <td><%= parsing.translated_text_selector %></td>
+        <td><%= link_to parsing.cards.count, cards_parsing_path(parsing) %></td>
+        <td><%= parsing.error %></td>
+        <td><%= link_to t('global.actions.delete'), parsing, method: :delete,
+                        data: { confirm: t('global.confirmations.deletion') } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

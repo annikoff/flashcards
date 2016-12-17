@@ -1,7 +1,8 @@
+# frozen_string_literal: true
 class ParsingJob < ActiveJob::Base
   queue_as :default
 
-  def perform(params)
-    Flashcards::Parser.new(params).parse
+  def perform(parsing)
+    parsing.parse!
   end
 end

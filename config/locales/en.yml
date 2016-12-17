@@ -17,7 +17,6 @@ en:
       delete_user: 'Delete user'
       download_from_flickr: 'Download from Flickr'
       find_on_flickr: 'Find on Flickr'
-      parse: 'Parse'
     confirmations:
       deletion: 'Confirm deletion'
     notices:
@@ -28,6 +27,7 @@ en:
       user_successfully_deleted: 'User successfully deleted.'
       user_successfully_updated: 'User profile successfully updated.'
       correct_translation: 'You have entered the correct translation. Keep It Up.'
+      parsing_is_running: 'Parsing is running'
     alerts:
       please_log_in: 'Please log in.'
       not_found: 'You have turned to a non-existent record.'
@@ -72,15 +72,16 @@ en:
         heading: 'Current card'
         no_cards_to_review: 'You have studied all available cards.
           Expect the date of revision.'
-    parsing:
+    parsings:
       index:
-        heading: ''
-      new:
-        heading: 'New parsing'
+        heading: 'All parsings'
         url: 'URL'
-        block_id: 'Deck'
         original_text_selector: 'Original text selector'
         translated_text_selector: 'Translated text selector'
+        cards_count: 'Cards count'
+        error: 'Error'
+      new:
+        heading: 'New parsing'
 
   home:
     user_sessions:
@@ -108,6 +109,9 @@ en:
       role:
         one: 'Role'
         other: 'Roles'
+      parsing:
+        one: 'Parsing'
+        other: 'Parsings'
     attributes:
       card:
         original_text: 'Original'
@@ -136,6 +140,12 @@ en:
         users: 'Users'
         created_at: 'Сreated date'
         updated_at: 'Updated date'
+      parsing:
+        url: 'URL'
+        original_text_selector: 'Original selector'
+        translated_text_selector: 'Translation selector'
+        user: 'User'
+        block: 'Deck'
     errors:
       models:
         card:

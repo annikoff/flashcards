@@ -4,6 +4,7 @@ require 'super_memo'
 class Card < ApplicationRecord
   belongs_to :user
   belongs_to :block
+  has_one :parsing_card, dependent: :destroy
   before_validation :set_review_date_as_now, on: :create
   validate :texts_are_not_equal
   validates :original_text, :translated_text, :review_date, presence: true
@@ -59,6 +60,7 @@ class Card < ApplicationRecord
   end
 
   def texts_are_not_equal
+    return if original_text.blank? || translated_text.blank?
     return if full_downcase(original_text) != full_downcase(translated_text)
     errors.add :original_text, :input_values_must_be_different
   end
