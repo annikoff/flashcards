@@ -24,7 +24,8 @@ Vagrant.configure('2') do |config|
                                privileged: false
 
   inline = 'if [ "$RAILS_ENV" != "test" ]; ' \
-           'then source ~/.profile && cd /vagrant && ./bin/puma restart; fi;'
+           'then source ~/.profile && cd /vagrant && ./bin/puma restart && ' \
+           './bin/delayed_job restart fi;'
   config.vm.provision 'shell', inline: inline,
                                env: env,
                                run: 'always',
