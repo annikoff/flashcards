@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Parsing < ApplicationRecord
   has_many :cards, through: :parsing_cards, dependent: :destroy
   has_many :parsing_cards, dependent: :destroy
@@ -8,7 +9,7 @@ class Parsing < ApplicationRecord
   validates :url,
             presence: true,
             format: {
-              with: %r{^#{URI::regexp(['http', 'https'])}},
+              with: %r{^#{URI.regexp(%w(http https))}},
               multiline: true,
               on: :create
             }
@@ -22,10 +23,10 @@ class Parsing < ApplicationRecord
       texts[:block_id] = block_id
       texts[:user_id] = user_id
       card = Card.new texts
-      self.parsing_cards.create card_id: card.id if card.save
+      parsing_cards.create card_id: card.id if card.save
     end
     self.error = nil
-  rescue Exception => exception
+  rescue StandardError => exception
     self.error = exception.message
   end
 

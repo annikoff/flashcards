@@ -36,7 +36,7 @@ describe 'parsings' do
     end
   end
 
-  describe 'when parsing is done'  do
+  describe 'when parsing is done' do
     let(:parsing) { create(:parsing, user: @user, block: @block) }
 
     it 'sees cards created by parsing' do
