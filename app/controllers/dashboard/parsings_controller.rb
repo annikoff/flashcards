@@ -6,7 +6,7 @@ module Dashboard
     def new; end
 
     def create
-      ::ParsingJob.perform_later(current_user, parsing_params.to_h)
+      ::ParsingJob.perform_later parsing_params.to_h
       redirect_to cards_path,
                   notice: I18n.t('global.notices.parsing_is_running')
     end

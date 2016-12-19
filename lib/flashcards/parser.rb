@@ -4,10 +4,10 @@ module Flashcards
     attr_accessor :url, :original_text_selector, :translated_text_selector,
                   :redirect_tries
 
-    def initialize(url, original_text_selector, translated_text_selector)
-      @url = url
-      @original_text_selector = original_text_selector
-      @translated_text_selector = translated_text_selector
+    def initialize(params)
+      @url = params[:url]
+      @original_text_selector = params[:original_text_selector]
+      @translated_text_selector = params[:translated_text_selector]
       @redirect_tries = 3
     end
 
