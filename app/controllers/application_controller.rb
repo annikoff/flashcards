@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :not_authorized
   self.responder = ApplicationResponder
   respond_to :html
-
+  after_action :track_visit
   protect_from_forgery with: :exception
   before_action :set_locale
 
@@ -40,5 +40,9 @@ class ApplicationController < ActionController::Base
 
   def compatible_language
     http_accept_language.compatible_language_from(I18n.available_locales)
+  end
+
+  def track_visit
+    ahoy.track_visit
   end
 end

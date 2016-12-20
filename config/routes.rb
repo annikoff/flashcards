@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  filter :locale, exclude: %r{^\/admin}
+  filter :locale, exclude: %r{^\/(admin|analytics)}
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount Analytics::Engine => '/analytics', as: 'analytics'
 
   root 'main#index'
 

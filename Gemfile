@@ -44,6 +44,7 @@ gem 'rails_admin_pundit', git: 'https://github.com/sudosu/rails_admin_pundit.git
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'dalli'
+gem 'analytics', path: 'vendor/analytics'
 
 group :development, :test do
   gem 'capybara'
