@@ -1,7 +1,13 @@
 $(document).ready(function () {
     var card_image = $("#card_image"),
         flickr_box = $("#flickr-box"),
+        flickr_anchor = $("#flickr-anchor"),
         card_remote_image_url = $("#card_remote_image_url");
+
+    flickr_anchor.click(function () {
+        flickr_box.toggle();
+        return false;
+    });
 
     card_image.change(function () {
         card_remote_image_url.val('');
