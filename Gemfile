@@ -43,6 +43,7 @@ gem 'pundit'
 gem 'rails_admin_pundit', git: 'https://github.com/sudosu/rails_admin_pundit.git'
 gem 'delayed_job_active_record'
 gem 'daemons'
+gem 'dalli'
 
 group :development, :test do
   gem 'capybara'
