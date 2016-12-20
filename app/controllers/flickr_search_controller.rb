@@ -7,7 +7,7 @@ class FlickrSearchController < ApplicationController
   end
 
   def index
-    @photos = photos_search(flickr_params[:text]).map { |photo| photo_info photo }
+    @photos = photos_search(flickr_params[:text]).map { |p| photo_info p }
   end
 
   private
