@@ -47,7 +47,7 @@ class Card < ApplicationRecord
     users = User.where.not(email: nil)
     users.each do |user|
       if user.cards.pending.any?
-        CardsMailer.pending_cards_notification(user.email).deliver
+        CardsMailer.pending_cards_notification(user.email).deliver_later
       end
     end
   end
@@ -59,6 +59,7 @@ class Card < ApplicationRecord
   end
 
   def texts_are_not_equal
+    return if original_text.blank? || translated_text.blank?
     return if full_downcase(original_text) != full_downcase(translated_text)
     errors.add :original_text, :input_values_must_be_different
   end

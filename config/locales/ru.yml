@@ -17,6 +17,7 @@ ru:
       delete_user: 'Удалить пользователя'
       download_from_flickr: 'Загрузить с Flickr'
       find_on_flickr: 'Найти во Flickr'
+      parse: 'Парсить'
     confirmations:
       deletion: 'Подтвердите удаление'
     notices:
@@ -27,6 +28,7 @@ ru:
       user_successfully_deleted: 'Пользователь успешно удален.'
       user_successfully_updated: 'Профиль пользователя успешно обновлен.'
       correct_translation: 'Вы ввели верный перевод. Продолжайте.'
+      parsing_is_running: 'Парсинг запущен'
     alerts:
       please_log_in: 'Пожалуйста авторизуйтесь.'
       not_found: 'Вы обратились к несуществующей записи.'
@@ -40,15 +42,18 @@ ru:
 
   cards_mailer:
     pending_cards_notification:
+      heading: 'Наступила дата пересмотра карточек.'
       go_to_website: 'Перейти на сайт для просмотра карточек'
+    cards_created_by_parsing:
+      heading: 'Парсинг закончен'
 
   dashboard:
     cards:
       index:
         heading: 'Все карточки'
-        original_text_label: 'Оригинал'
-        translated_text_label: 'Перевод'
-        review_label: 'Пересмотр'
+        original_text: 'Оригинал'
+        translated_text: 'Перевод'
+        review: 'Пересмотр'
       new:
         heading: 'Добавить карточку'
       edit:
@@ -71,6 +76,13 @@ ru:
         heading: 'Текущая карточка'
         no_cards_to_review: 'Вы изучили все доступные карточки.
           Ожидайте наступления даты пересмотра.'
+    parsings:
+      new:
+        heading: 'Новый парсинг'
+        url: 'URL'
+        original_text_selector: 'Селектор для оригинала'
+        translated_text_selector: 'Селектор для перевода'
+        block_id: 'Колода'
 
   home:
     user_sessions:

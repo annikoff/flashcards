@@ -30,5 +30,7 @@ module Flashcards
     config.i18n.default_locale = :ru
     config.i18n.available_locales = [:ru, :en]
     config.force_ssl = false
+    config.active_job.queue_adapter = :delayed_job
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
