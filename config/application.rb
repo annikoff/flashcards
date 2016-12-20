@@ -32,5 +32,6 @@ module Flashcards
     config.force_ssl = false
     config.active_job.queue_adapter = :delayed_job
     config.autoload_paths << Rails.root.join('lib')
+    config.action_controller.cache_store = :mem_cache_store, 'localhost'
   end
 end

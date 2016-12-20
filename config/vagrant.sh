@@ -48,6 +48,10 @@ sudo yum -y install mesa-dri-drivers
 # Run Xvfb
 Xvfb :1 -screen 0 1024x768x24&
 
+# Install Memcached
+sudo yum -y install memcached
+sudo systemctl enable memcached
+
 # Install gems
 gem install bundler
 gem install pg -- --with-pg-config=/usr/pgsql-9.5/bin/pg_config
