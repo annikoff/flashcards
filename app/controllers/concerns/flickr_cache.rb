@@ -11,7 +11,7 @@ module FlickrCache
   end
 
   def photo_info(photo)
-    Rails.cache.fetch(photo.id, expires_in: expires_in) do
+    Rails.cache.fetch(photo, expires_in: expires_in) do
       info = flickr.photos.getInfo(photo_id: photo.id)
       { title: info.title, url: FlickRaw.url_m(info) }
     end
