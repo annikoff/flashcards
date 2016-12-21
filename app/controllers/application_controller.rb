@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
   after_action :track_visit
+  after_action :track_path, only: [:index, :show, :new, :edit]
   protect_from_forgery with: :exception
   before_action :set_locale
 
@@ -44,5 +45,9 @@ class ApplicationController < ActionController::Base
 
   def track_visit
     ahoy.track_visit
+  end
+
+  def track_path
+    ahoy.track 'visit', path: request.path
   end
 end

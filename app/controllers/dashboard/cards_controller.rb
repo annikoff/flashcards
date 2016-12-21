@@ -18,6 +18,7 @@ module Dashboard
     def create
       @card = current_user.cards.build(card_params)
       if @card.save
+        track_card_create
         redirect_to cards_path
       else
         respond_with @card
@@ -48,6 +49,10 @@ module Dashboard
 
     def find_blocks
       @blocks = current_user.blocks.all.order('title')
+    end
+
+    def track_card_create
+      ahoy.track 'card_create', card_id: @card.id
     end
   end
 end

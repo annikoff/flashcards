@@ -52,6 +52,7 @@ class CreateAnalyticsVisits < ActiveRecord::Migration[5.0]
       t.timestamp :started_at
     end
 
+    add_index :analytics_visits, [:visit_token], unique: true
     add_index :analytics_visits, [:user_id]
   end
 end

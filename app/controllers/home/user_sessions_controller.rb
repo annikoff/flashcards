@@ -12,6 +12,7 @@ module Home
     def create
       @user = login(user_params[:email], user_params[:password])
       if @user
+        track_simple_login
         redirect_back_or_to root_path,
                             notice: t('global.notices.log_in_is_successful')
       else
@@ -23,6 +24,10 @@ module Home
 
     def user_params
       params.require(:user).permit(:email, :password)
+    end
+
+    def track_simple_login
+      ahoy.track 'simple_login'
     end
   end
 end
