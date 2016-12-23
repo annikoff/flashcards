@@ -18,6 +18,7 @@ module Dashboard
       if check_result[:state]
         if check_result[:distance].zero?
           flash[:notice] = t('global.notices.correct_translation')
+          track_card_review
         else
           flash[:alert] = t 'global.alerts.translation_from_misprint',
                             user_translation: trainer_params[:user_translation],
@@ -35,6 +36,10 @@ module Dashboard
 
     def trainer_params
       params.permit(:user_translation)
+    end
+
+    def track_card_review
+      ahoy.track 'card_review', card_id: @card.id
     end
   end
 end

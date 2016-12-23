@@ -11,6 +11,7 @@ module Home
       provider = auth_params[:provider]
       @user = login_from(provider)
       if @user
+        track_oauth_login
         redirect_to trainer_path,
                     notice: t('global.notices.log_in_is_successful_provider'),
                     provider: provider.titleize
@@ -19,6 +20,7 @@ module Home
           @user = create_from(provider)
           reset_session
           auto_login(@user)
+          track_oauth_login
           redirect_to trainer_path,
                       notice: t('global.notices.log_in_is_successful_provider'),
                       provider: provider.titleize
@@ -34,6 +36,10 @@ module Home
 
     def auth_params
       params.permit(:code, :provider)
+    end
+
+    def track_oauth_login
+      ahoy.track 'oauth_login'
     end
   end
 end

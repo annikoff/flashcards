@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  filter :locale, exclude: %r{^\/admin}
+  filter :locale, exclude: %r{^\/(admin|analytics)}
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-
+  constraints Constraints::Admin do
+    mount Analytics::Engine => '/analytics', as: 'analytics'
+  end
   root 'main#index'
 
   scope module: 'home' do
